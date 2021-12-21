@@ -10,7 +10,7 @@ code {
     monospace;
 }
 .active {
-  color: white;
+  color: white !important;
   text-shadow: 0 0 1px white;
   font-weight: bold;
 }

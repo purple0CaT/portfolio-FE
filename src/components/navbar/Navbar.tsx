@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-scroll";
 import "./NavB.css";
 
 function Navbar() {
+  const [NavBarBg, setNavBarBg] = useState(true);
   return (
-    <div className="navBarWrap">
+    <div className={`navBarWrap  ${!NavBarBg && "navBarBg"}`}>
       <div className="navBar">
         <Link
           activeClass="logo"
@@ -22,8 +23,10 @@ function Navbar() {
             to="Home"
             spy={true}
             smooth={true}
-            offset={0}
+            offset={-80}
             duration={400}
+            onSetActive={() => setNavBarBg(true)}
+            onSetInactive={() => setNavBarBg(false)}
           >
             Home
           </Link>
@@ -33,6 +36,7 @@ function Navbar() {
             to="About"
             spy={true}
             smooth={true}
+            // onSetInactive={() => setNavBarBg(false)}
             offset={-80}
             duration={400}
           >

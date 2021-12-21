@@ -10,6 +10,7 @@ import Resume from "./components/resume/Resume";
 
 function App() {
   const [Greetings, setGreetings] = useState(true);
+  const [NavbarBg, setNavbarBg] = useState(false);
   useEffect(() => {
     setTimeout(() => {
       setGreetings(false);
@@ -17,20 +18,28 @@ function App() {
   }, []);
   return (
     <div>
-      {Greetings && <Greeting />}
-      <Navbar />
-      <Element name="Home">
-        <Home />
-      </Element>
-      <Element name="About">
-        <About />
-      </Element>
-      <Element name="Portfolio">
-        <Portfolio />
-      </Element>
-      <Element name="Resume">
-        <Resume />
-      </Element>
+      {Greetings ? (
+        <Greeting />
+      ) : (
+        <>
+          <Navbar />
+          <Element name="Home">
+            <Home />
+          </Element>
+          <div
+            style={{ backgroundColor: "rgb(124, 124, 124)", height: "1em" }}
+          ></div>
+          <Element name="About">
+            <About />
+          </Element>
+          <Element name="Portfolio">
+            <Portfolio />
+          </Element>
+          <Element name="Resume">
+            <Resume />
+          </Element>
+        </>
+      )}
     </div>
   );
 }
