@@ -1,0 +1,27 @@
+.navBarWrap {
+  height: 3rem;
+  width: 100%;
+  background-color: rgb(168, 179, 179);
+  position: fixed;
+}
+.navBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.navBtns {
+  color: rgb(228, 228, 228);
+  cursor: pointer;
+  text-decoration: none;
+  transition: 0.1s;
+}
+.navBtns:hover {
+  text-decoration: none;
+  color: white;
+  transform: scale(1.02);
+  text-shadow: 0 0 5px white;
+}
+.navBtns:active {
+  transform: scale(1);
+  text-shadow: 0 0 5px rgb(199, 199, 199);
+}
