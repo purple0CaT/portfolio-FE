@@ -1,4 +1,4 @@
 .portWrapper {
-    height: 100vh;
-    background-color: rgb(252, 255, 225);
-  }
+  height: calc(100vh - 5em);
+  background-color: rgb(252, 255, 225);
+}

@@ -1,4 +1,4 @@
 .resumWrapper {
-    height: 100vh;
-    background-color: rgb(255, 242, 225);
-  }
+  height: calc(100vh - 5em);
+  background-color: rgb(255, 242, 225);
+}

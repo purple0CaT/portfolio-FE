@@ -5,15 +5,15 @@ import "./NavB.css";
 function Navbar() {
   return (
     <div className="navBarWrap">
-      <div className="p-2 navBar">
+      <div className="navBar">
         <Link
           activeClass="logo"
           to="Home"
           smooth={true}
           offset={0}
-          duration={500}
+          duration={300}
         >
-          Link
+          Logo
         </Link>{" "}
         <div className="d-flex" style={{ gap: "1rem" }}>
           <Link
@@ -23,7 +23,7 @@ function Navbar() {
             spy={true}
             smooth={true}
             offset={0}
-            duration={500}
+            duration={400}
           >
             Home
           </Link>
@@ -33,8 +33,8 @@ function Navbar() {
             to="About"
             spy={true}
             smooth={true}
-            offset={0}
-            duration={500}
+            offset={-80}
+            duration={400}
           >
             About
           </Link>
@@ -44,8 +44,8 @@ function Navbar() {
             to="Portfolio"
             spy={true}
             smooth={true}
-            offset={0}
-            duration={500}
+            offset={-80}
+            duration={400}
           >
             Portfolio
           </Link>
@@ -55,8 +55,8 @@ function Navbar() {
             to="Resume"
             spy={true}
             smooth={true}
-            offset={0}
-            duration={500}
+            offset={-80}
+            duration={400}
           >
             Resume
           </Link>

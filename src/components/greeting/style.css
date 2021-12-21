@@ -1,0 +1,32 @@
+.greetingWrapper {
+  position: absolute !important;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: chocolate;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  animation-name: greeting;
+  animation-duration: 2.1s;
+}
+
+@keyframes greeting {
+  0% {
+    background-color: chocolate;
+  }
+  25% {
+    background-color: yellow;
+  }
+  50% {
+    background-color: blue;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}

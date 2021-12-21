@@ -1,13 +1,16 @@
 .navBarWrap {
-  height: 3rem;
+  height: 5em;
   width: 100%;
   background-color: rgb(168, 179, 179);
   position: fixed;
+  padding: 0 6em;
 }
 .navBar {
+  height: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  font-size: 1.4rem;
 }
 .navBtns {
   color: rgb(228, 228, 228);
