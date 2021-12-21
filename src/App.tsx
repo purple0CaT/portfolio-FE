@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useInView } from "react-intersection-observer";
 import { BrowserRouter as Router } from "react-router-dom";
 import { Element, Link } from "react-scroll";
 import About from "./components/about/About";
@@ -10,7 +11,10 @@ import Resume from "./components/resume/Resume";
 
 function App() {
   const [Greetings, setGreetings] = useState(true);
-  const [NavbarBg, setNavbarBg] = useState(false);
+  const { ref, inView, entry } = useInView({
+    threshold: 1,
+  });
+  //
   useEffect(() => {
     setTimeout(() => {
       setGreetings(false);
@@ -22,13 +26,14 @@ function App() {
         <Greeting />
       ) : (
         <>
-          <Navbar />
+          <Navbar inView={inView} />
+          <div
+            ref={ref}
+            style={{ backgroundColor: "rgb(124, 124, 124)", height: "1px" }}
+          ></div>
           <Element name="Home">
             <Home />
           </Element>
-          <div
-            style={{ backgroundColor: "rgb(124, 124, 124)", height: "1em" }}
-          ></div>
           <Element name="About">
             <About />
           </Element>
