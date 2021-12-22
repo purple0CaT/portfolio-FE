@@ -18,7 +18,7 @@ function Navbar({ inView }: any) {
         >
           Logo
         </Link>{" "}
-        {/* REGULAR SIZE MENU */}
+        {/* RIGHT MENU */}
         {matches ? (
           <div className="d-flex" style={{ gap: "1rem" }}>
             <Link
@@ -29,8 +29,6 @@ function Navbar({ inView }: any) {
               smooth={true}
               offset={-79}
               duration={400}
-              // onSetActive={() => handleBg(true)}
-              // onSetInactive={() => handleBg(true)}
             >
               Home
             </Link>

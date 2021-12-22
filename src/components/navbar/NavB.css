@@ -8,6 +8,7 @@
 }
 .navBarBg {
   background-color: rgba(26, 26, 26, 0.8);
+  box-shadow: 0 3px 5px grey;
 }
 .navBar {
   height: 100%;
@@ -20,7 +21,7 @@
   color: rgb(228, 228, 228);
   cursor: pointer;
   text-decoration: none;
-  transition: 0.1s;
+  /* transition: 0.1s; */
 }
 .navBtns:hover {
   text-decoration: none;
