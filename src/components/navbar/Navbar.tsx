@@ -1,5 +1,5 @@
 import { useMediaQuery } from "@mui/material";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Link } from "react-scroll";
 import MobileMenu from "./MobileMenu";
 import "./NavB.css";
@@ -13,22 +13,28 @@ function Navbar({ inView }: any) {
           activeClass="logo"
           to="Home"
           smooth={true}
-          offset={-79}
+          offset={-1}
           duration={300}
         >
           Logo
         </Link>{" "}
         {/* RIGHT MENU */}
         {matches ? (
-          <div className="d-flex" style={{ gap: "1rem" }}>
+          <div
+            className="d-flex"
+            style={{
+              gap: "1rem",
+            }}
+          >
             <Link
-              activeClass="active"
+              activeClass={inView ? "activeNoBg" : "active"}
               className="navBtns"
               to="Home"
               spy={true}
               smooth={true}
-              offset={-79}
+              offset={-1}
               duration={400}
+              style={{ color: inView ? "black" : "white" }}
             >
               Home
             </Link>
@@ -38,8 +44,9 @@ function Navbar({ inView }: any) {
               to="About"
               spy={true}
               smooth={true}
-              offset={-80}
+              offset={-49}
               duration={400}
+              style={{ color: inView ? "black" : "white" }}
             >
               About
             </Link>
@@ -49,8 +56,9 @@ function Navbar({ inView }: any) {
               to="Portfolio"
               spy={true}
               smooth={true}
-              offset={-80}
+              offset={-49}
               duration={400}
+              style={{ color: inView ? "black" : "white" }}
             >
               Portfolio
             </Link>
@@ -60,8 +68,9 @@ function Navbar({ inView }: any) {
               to="Resume"
               spy={true}
               smooth={true}
-              offset={-80}
+              offset={-49}
               duration={400}
+              style={{ color: inView ? "black" : "white" }}
             >
               Resume
             </Link>

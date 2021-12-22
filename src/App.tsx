@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useInView } from "react-intersection-observer";
-import { BrowserRouter as Router } from "react-router-dom";
-import { Element, Link } from "react-scroll";
+import { Element } from "react-scroll";
+import { ParallaxProvider } from "react-scroll-parallax";
 import About from "./components/about/About";
 import Greeting from "./components/greeting/Greeting";
 import Home from "./components/home/Home";
@@ -21,7 +21,7 @@ function App() {
     }, 2000);
   }, []);
   return (
-    <div>
+    <>
       {Greetings ? (
         <Greeting />
       ) : (
@@ -45,7 +45,7 @@ function App() {
           </Element>
         </>
       )}
-    </div>
+    </>
   );
 }
 

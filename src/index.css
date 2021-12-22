@@ -14,6 +14,12 @@ code {
   text-shadow: 0 0 1px white;
   font-weight: bold;
 }
-/* .sectionWrapper{
-  height: calc(100vh - 5em)
-} */
+.activeNoBg {
+  color: black !important;
+  text-shadow: 0 0 1px white;
+  font-weight: bold;
+}
+.sectionWrapper {
+  height: calc(100vh - 3em);
+  padding-top: 4.5em;
+}
