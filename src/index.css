@@ -21,5 +21,5 @@ code {
 }
 .sectionWrapper {
   height: calc(100vh - 3em);
-  padding-top: 4.5em;
+  /* padding-top: 4.5em; */
 }

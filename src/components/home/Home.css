@@ -22,10 +22,10 @@
   background-size: cover;
 } 
 */
-.react-parallax {
+.homeWrapper .react-parallax {
   display: flex;
 }
-.react-parallax-content {
+.homeWrapper .react-parallax-content {
   margin: auto;
   background-color: white;
   border-radius: 10px;

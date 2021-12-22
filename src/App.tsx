@@ -29,7 +29,7 @@ function App() {
           <Navbar inView={inView} />
           <div
             ref={ref}
-            style={{ backgroundColor: "rgb(124, 124, 124)", height: "1px" }}
+            style={{ backgroundColor: "rgb(200, 200, 200)", height: "1px" }}
           ></div>
           <Element name="Home">
             <Home />
