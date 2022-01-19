@@ -1,6 +1,7 @@
 .homeWrapper {
   position: relative;
   height: calc(100vh - 1px);
+  background-color: rgb(77, 77, 77);
   /* padding-top: 4.5em; */
   /* background-color: rgb(124, 124, 124); */
   /* background-size: cover; */

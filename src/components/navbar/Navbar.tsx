@@ -32,7 +32,7 @@ function Navbar({ inView }: any) {
               to="Home"
               spy={true}
               smooth={true}
-              offset={-1}
+              offset={-48}
               duration={400}
               style={{ color: inView ? "black" : "white" }}
             >
@@ -44,7 +44,7 @@ function Navbar({ inView }: any) {
               to="About"
               spy={true}
               smooth={true}
-              offset={-49}
+              offset={-48}
               duration={400}
               style={{ color: inView ? "black" : "white" }}
             >
@@ -56,7 +56,7 @@ function Navbar({ inView }: any) {
               to="Portfolio"
               spy={true}
               smooth={true}
-              offset={-49}
+              offset={-48}
               duration={400}
               style={{ color: inView ? "black" : "white" }}
             >
@@ -68,7 +68,7 @@ function Navbar({ inView }: any) {
               to="Resume"
               spy={true}
               smooth={true}
-              offset={-49}
+              offset={-48}
               duration={400}
               style={{ color: inView ? "black" : "white" }}
             >
