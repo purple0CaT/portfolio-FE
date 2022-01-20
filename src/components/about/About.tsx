@@ -32,8 +32,8 @@ function About() {
                 className="h-100"
                 layers={[
                   {
-                    image: "/bgImg.jpg",
-                    amount: 0.3,
+                    image: "https://i.imgur.com/qJQezzj.jpg",
+                    amount: -0.3,
                   },
                 ]}
                 style={{
