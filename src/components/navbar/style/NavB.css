@@ -1,0 +1,93 @@
+.navBarWrap {
+  height: 3em;
+  width: 100%;
+  background-color: transparent;
+  position: fixed;
+  padding: 0 1%;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  z-index: 999;
+}
+
+.navBarBg {
+  background-color: rgba(26, 26, 26, 0.8);
+  -webkit-box-shadow: 0 3px 5px rgba(0, 0, 0, 0.473);
+          box-shadow: 0 3px 5px rgba(0, 0, 0, 0.473);
+}
+
+.navBar {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 1.4rem;
+}
+
+.navBtns {
+  color: #e4e4e4;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.navBtns:hover {
+  text-decoration: none;
+  color: white;
+  -webkit-transform: scale(1.02);
+          transform: scale(1.02);
+  text-shadow: 0 0 5px white;
+}
+
+.navBtns:active {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  text-shadow: 0 0 5px #c7c7c7;
+}
+
+/* =================================== MOBILE MENU */
+.mobileMenu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 2em;
+  height: 50vh;
+  gap: 2rem;
+  background-color: dimgray !important;
+  font-size: 1.5rem;
+}
+
+.logo {
+  position: relative;
+  cursor: pointer;
+}
+
+.logo img {
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+}
+
+.logo img:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+
+.logo img:active {
+  -webkit-transform: scale(0.95);
+          transform: scale(0.95);
+}
+/*# sourceMappingURL=NavB.css.map */

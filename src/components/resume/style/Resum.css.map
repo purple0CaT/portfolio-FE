@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,aAAa,CAAC;EACZ,gBAAgB,EAAE,OAAe;EACjC,KAAK,EAAE,KAAK;CACb",
+    "sources": [
+        "Resum.scss"
+    ],
+    "names": [],
+    "file": "Resum.css"
+}

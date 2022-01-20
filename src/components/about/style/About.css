@@ -1,0 +1,81 @@
+.aboutWrapper {
+  background-color: black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 2em;
+  color: white;
+  overflow: hidden;
+}
+
+.parallax-inner {
+  height: 100%;
+  width: 100%;
+}
+
+.greeting-span {
+  font-size: 1.5rem;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  position: relative;
+  border-bottom: 1px solid transparent;
+  -webkit-animation: 2s ease-in-out infinite highlightSupport;
+          animation: 2s ease-in-out infinite highlightSupport;
+}
+
+.greeting-span:hover {
+  background-color: #fff56c;
+  cursor: pointer;
+  color: black;
+}
+
+.greeting-span:hover::after {
+  content: "";
+  position: absolute;
+  inset: auto -2.8rem 1.7rem auto;
+  width: 5rem;
+  height: 5rem;
+  background: url("obiWan.png");
+  background-size: cover;
+}
+
+@-webkit-keyframes highlightSupport {
+  0% {
+    border-color: white;
+  }
+  25% {
+    border-color: #ffff95;
+  }
+  50% {
+    border-color: #ff7b7b;
+  }
+  75% {
+    border-color: #70baff;
+  }
+  100% {
+    border-color: white;
+  }
+}
+
+@keyframes highlightSupport {
+  0% {
+    border-color: white;
+  }
+  25% {
+    border-color: #ffff95;
+  }
+  50% {
+    border-color: #ff7b7b;
+  }
+  75% {
+    border-color: #70baff;
+  }
+  100% {
+    border-color: white;
+  }
+}
+/*# sourceMappingURL=About.css.map */

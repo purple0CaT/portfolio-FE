@@ -8,9 +8,8 @@ function Home() {
         className="your-class"
         layers={[
           {
-            // image: "/bgImg.jpg",
             image: "https://i.imgur.com/qJQezzj.jpg",
-            amount: -0.15,
+            amount: 0.15,
           },
         ]}
         style={{

@@ -42,8 +42,9 @@ function About() {
                 className="h-100"
                 layers={[
                   {
-                    image: "https://i.imgur.com/qJQezzj.jpg",
+                    image: "https://imgur.com/f9GTr5U.jpg",
                     amount: -0.3,
+                    props: { style: { boxShadow: "0 0 20px red" } },
                   },
                 ]}
                 style={{
