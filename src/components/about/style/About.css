@@ -23,8 +23,8 @@
   transition: 0.2s;
   position: relative;
   border-bottom: 1px solid transparent;
-  -webkit-animation: 2s ease-in-out infinite highlightSupport;
-          animation: 2s ease-in-out infinite highlightSupport;
+  -webkit-animation: 3s ease-in-out infinite highlightSupport;
+          animation: 3s ease-in-out infinite highlightSupport;
 }
 
 .greeting-span:hover {
@@ -47,14 +47,17 @@
   0% {
     border-color: white;
   }
-  25% {
-    border-color: #ffff95;
-  }
-  50% {
+  20% {
     border-color: #ff7b7b;
   }
-  75% {
+  40% {
+    border-color: #ffff95;
+  }
+  60% {
     border-color: #70baff;
+  }
+  80% {
+    border-color: #70ff70;
   }
   100% {
     border-color: white;
@@ -65,14 +68,17 @@
   0% {
     border-color: white;
   }
-  25% {
-    border-color: #ffff95;
-  }
-  50% {
+  20% {
     border-color: #ff7b7b;
   }
-  75% {
+  40% {
+    border-color: #ffff95;
+  }
+  60% {
     border-color: #70baff;
+  }
+  80% {
+    border-color: #70ff70;
   }
   100% {
     border-color: white;

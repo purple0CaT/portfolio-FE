@@ -3,20 +3,20 @@ import "./style/Home.scss";
 //
 function Home() {
   return (
-    <div className="homeWrapper">
+    <main className="homeWrapper">
       <ParallaxBanner
         className="your-class"
         layers={[
           {
             image: "https://i.imgur.com/qJQezzj.jpg",
-            amount: 0.15,
+            amount: 0.12,
           },
         ]}
         style={{
           height: "100%",
         }}
       ></ParallaxBanner>
-    </div>
+    </main>
   );
 }
 

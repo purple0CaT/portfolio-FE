@@ -3,6 +3,7 @@ import { useInView } from "react-intersection-observer";
 import { Element } from "react-scroll";
 import { ParallaxProvider } from "react-scroll-parallax";
 import About from "./components/about/About";
+import Footer from "./components/footer/Footer";
 import Greeting from "./components/greeting/Greeting";
 import Home from "./components/home/Home";
 import Navbar from "./components/navbar/Navbar";
@@ -43,6 +44,7 @@ function App() {
           <Element name="Resume">
             <Resume />
           </Element>
+          <Footer />
         </>
       )}
     </>

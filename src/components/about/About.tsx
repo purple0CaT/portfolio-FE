@@ -4,7 +4,7 @@ import "./style/About.scss";
 
 function About() {
   return (
-    <div className="aboutWrapper sectionWrapper">
+    <main className="aboutWrapper sectionWrapper">
       <h1 className="mx-auto">About</h1>
       <Row className="h-100">
         {/*  LEFT COLUMN */}
@@ -56,7 +56,7 @@ function About() {
           </div>
         </Col>
       </Row>
-    </div>
+    </main>
   );
 }
 

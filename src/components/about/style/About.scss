@@ -15,7 +15,7 @@
   transition: 0.2s;
   position: relative;
   border-bottom: 1px solid transparent;
-  animation: 2s ease-in-out infinite highlightSupport;
+  animation: 3s ease-in-out infinite highlightSupport;
   //
   &:hover {
     background-color: rgb(255, 245, 108);
@@ -38,14 +38,18 @@
   0% {
     border-color: white;
   }
-  25% {
+  20% {
+    border-color: rgb(255, 123, 123);
+
+  }
+  40% {
     border-color: rgb(255, 255, 149);
   }
-  50% {
-    border-color: rgb(255, 123, 123);
-  }
-  75% {
+  60% {
     border-color: rgb(112, 186, 255);
+  }
+  80% {
+    border-color: rgb(112, 255, 112);
   }
   100% {
     border-color: white;
