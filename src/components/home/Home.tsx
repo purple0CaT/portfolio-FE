@@ -1,5 +1,5 @@
 import { Parallax, ParallaxBanner } from "react-scroll-parallax";
-import "./Home.css";
+import "./style/Home.scss";
 //
 function Home() {
   return (
@@ -9,8 +9,7 @@ function Home() {
         layers={[
           {
             // image: "/bgImg.jpg",
-            image:
-              "https://i.imgur.com/qJQezzj.jpg",
+            image: "https://i.imgur.com/qJQezzj.jpg",
             amount: -0.15,
           },
         ]}

@@ -1,6 +1,5 @@
 import React from "react";
-import { Parallax, ParallaxProvider } from "react-scroll-parallax";
-import "./Port.css";
+import "./style/Port.scss";
 
 function Portfolio() {
   return (

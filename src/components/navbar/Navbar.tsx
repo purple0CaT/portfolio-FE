@@ -2,7 +2,7 @@ import { useMediaQuery } from "@mui/material";
 import React from "react";
 import { Link } from "react-scroll";
 import MobileMenu from "./MobileMenu";
-import "./NavB.css";
+import "./style/NavB.scss";
 
 function Navbar({ inView }: any) {
   const matches = useMediaQuery("(min-width:550px)");

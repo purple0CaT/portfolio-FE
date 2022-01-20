@@ -1,7 +1,6 @@
 import { Col, Row } from "react-bootstrap";
-// import { Parallax } from "react-parallax";
 import { ParallaxBanner, Parallax } from "react-scroll-parallax";
-import "./About.css";
+import "./style/About.scss";
 
 function About() {
   return (
@@ -15,9 +14,20 @@ function About() {
           className="position-relative d-flex align-items-center"
           style={{ minHeight: "50%" }}
         >
-          <div style={{ minHeight: "80%" }}>
-            <h3>Full Stack Developer</h3>
-          </div>
+          <section
+            style={{
+              minHeight: "80%",
+              display: "flex",
+              flexDirection: "column",
+            }}
+          >
+            <h3>
+              <span className="greeting-span">Hello there</span>, I'm Istvan
+              Sandor
+            </h3>
+            <p>asdasdasdasd</p>
+            <p className="mt-auto">asdasd</p>
+          </section>
         </Col>
         {/* RIGHt COLUMN */}
         <Col
