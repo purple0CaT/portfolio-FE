@@ -8,7 +8,7 @@ function Home() {
         className="your-class"
         layers={[
           {
-            image: "bgImg.jpg",
+            image: "/bgImg.jpg",
             amount: 0.15,
           },
         ]}

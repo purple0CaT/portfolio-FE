@@ -32,7 +32,7 @@ function About() {
                 className="h-100"
                 layers={[
                   {
-                    image: "bgImg.jpg",
+                    image: "/bgImg.jpg",
                     amount: 0.3,
                   },
                 ]}
