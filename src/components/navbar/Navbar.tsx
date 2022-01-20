@@ -10,13 +10,17 @@ function Navbar({ inView }: any) {
     <div className={`navBarWrap  ${!inView && "navBarBg"}`}>
       <div className="navBar">
         <Link
-          activeClass="logo"
+          className="logo"
           to="Home"
           smooth={true}
           offset={-1}
           duration={300}
         >
-          Logo
+          <img
+            src="logo.png"
+            alt="Logo"
+            style={{ height: "3rem", objectFit: "cover" }}
+          />
         </Link>{" "}
         {/* RIGHT MENU */}
         {matches ? (

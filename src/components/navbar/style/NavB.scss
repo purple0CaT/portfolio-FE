@@ -1,3 +1,5 @@
+$navBarBg: rgba(26, 26, 26, 0.8);
+//
 .navBarWrap {
   height: 3em;
   width: 100%;
@@ -8,7 +10,7 @@
   z-index: 999;
 }
 .navBarBg {
-  background-color: rgba(26, 26, 26, 0.8);
+  background-color: $navBarBg;
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.473);
 }
 .navBar {
@@ -22,24 +24,18 @@
   color: rgb(228, 228, 228);
   cursor: pointer;
   text-decoration: none;
-  /* transition: 0.1s; */
-}
-.navBtns:hover {
-  text-decoration: none;
-  color: white;
-  transform: scale(1.02);
-  text-shadow: 0 0 5px white;
-}
-.navBtns:active {
-  transform: scale(1);
-  text-shadow: 0 0 5px rgb(199, 199, 199);
+  &:hover {
+    text-decoration: none;
+    color: white;
+    transform: scale(1.02);
+    text-shadow: 0 0 5px white;
+  }
+  &:active {
+    transform: scale(1);
+    text-shadow: 0 0 5px rgb(199, 199, 199);
+  }
 }
 /* =================================== MOBILE MENU */
-/* @media screen and (max-width: 700px) {
-  .navBarWrap {
-    padding: 0 1em;
-  }
-} */
 .mobileMenu {
   display: flex;
   flex-direction: column;
@@ -50,4 +46,19 @@
   gap: 2rem;
   background-color: rgb(105, 105, 105) !important;
   font-size: 1.5rem;
+}
+// LOGO
+.logo {
+  position: relative;
+  cursor: pointer;
+  & img {
+    transition: 0.2s ease-in-out;
+    //
+    &:hover {
+      transform: scale(1.2);
+    }
+    &:active {
+      transform: scale(0.95);
+    }
+  }
 }
