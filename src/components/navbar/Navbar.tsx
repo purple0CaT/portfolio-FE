@@ -69,14 +69,14 @@ function Navbar({ inView }: any) {
             <Link
               className="navBtns"
               activeClass="active"
-              to="Resume"
+              to="Contact"
               spy={true}
               smooth={true}
               offset={-48}
               duration={400}
               style={{ color: inView ? "black" : "white" }}
             >
-              Resume
+              Contact
             </Link>
           </div>
         ) : (

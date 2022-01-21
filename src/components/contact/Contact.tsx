@@ -1,12 +1,11 @@
-import React from "react";
 import "./style/Resum.scss";
 
-function Resume() {
+function Contact() {
   return (
     <div className="resumWrapper sectionWrapper">
-      <h1>Resume</h1>
+      <h1 className="text-center">Contact</h1>
     </div>
   );
 }
 
-export default Resume;
+export default Contact;

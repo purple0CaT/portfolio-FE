@@ -19,6 +19,7 @@ function About() {
               minHeight: "80%",
               display: "flex",
               flexDirection: "column",
+              width: "100%",
             }}
           >
             <h3>
@@ -27,6 +28,17 @@ function About() {
             </h3>
             <p>asdasdasdasd</p>
             <p className="mt-auto">asdasd</p>
+            <div className="mx-auto">
+              <a
+                className="text-decoration-none downloadCV"
+                href="./IstvanSandor.pdf"
+                download="Istvan Sandor"
+                target={"_blank"}
+              >
+                Download CV
+                {/* <h5 className="downloadCV"></h5> */}
+              </a>
+            </div>
           </section>
         </Col>
         {/* RIGHt COLUMN */}

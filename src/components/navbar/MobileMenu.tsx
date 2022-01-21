@@ -60,7 +60,7 @@ function MobileMenu() {
             duration={400}
             onClick={() => setShowBar(false)}
           >
-            Resume
+            Contact
           </Link>
         </div>
       </Drawer>

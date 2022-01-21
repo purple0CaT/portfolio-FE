@@ -1,14 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { useInView } from "react-intersection-observer";
 import { Element } from "react-scroll";
-import { ParallaxProvider } from "react-scroll-parallax";
 import About from "./components/about/About";
+import Resume from "./components/contact/Contact";
 import Footer from "./components/footer/Footer";
 import Greeting from "./components/greeting/Greeting";
 import Home from "./components/home/Home";
 import Navbar from "./components/navbar/Navbar";
 import Portfolio from "./components/portfolio/Portfolio";
-import Resume from "./components/resume/Resume";
 
 function App() {
   const [Greetings, setGreetings] = useState(true);
@@ -41,7 +40,7 @@ function App() {
           <Element name="Portfolio">
             <Portfolio />
           </Element>
-          <Element name="Resume">
+          <Element name="Contact">
             <Resume />
           </Element>
           <Footer />

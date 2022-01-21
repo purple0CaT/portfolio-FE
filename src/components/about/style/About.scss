@@ -33,14 +33,25 @@
     }
   }
 }
-//
+.downloadCV {
+  color: rgb(121, 209, 212);
+  transition: 0.2s;
+  font-size: 1.4rem;
+  //
+  &:hover {
+    font-weight: bold;
+    text-decoration: none;
+    color: rgb(72, 229, 235);
+    text-shadow: 0 0 3px white;
+  }
+}
+// Animation
 @keyframes highlightSupport {
   0% {
     border-color: white;
   }
   20% {
     border-color: rgb(255, 123, 123);
-
   }
   40% {
     border-color: rgb(255, 255, 149);

@@ -43,6 +43,20 @@
   background-size: cover;
 }
 
+.downloadCV {
+  color: #79d1d4;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  font-size: 1.4rem;
+}
+
+.downloadCV:hover {
+  font-weight: bold;
+  text-decoration: none;
+  color: #48e5eb;
+  text-shadow: 0 0 3px white;
+}
+
 @-webkit-keyframes highlightSupport {
   0% {
     border-color: white;
