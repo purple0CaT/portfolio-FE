@@ -20,7 +20,7 @@ function MobileMenu() {
             to="Home"
             spy={true}
             smooth={true}
-            offset={-48}
+            offset={-49}
             duration={400}
             onClick={() => setShowBar(false)}
           >
@@ -44,7 +44,7 @@ function MobileMenu() {
             to="Portfolio"
             spy={true}
             smooth={true}
-            offset={-48}
+            offset={-49}
             duration={400}
             onClick={() => setShowBar(false)}
           >
@@ -53,10 +53,10 @@ function MobileMenu() {
           <Link
             className="navBtns"
             activeClass="active"
-            to="Resume"
+            to="Contact"
             spy={true}
             smooth={true}
-            offset={-48}
+            offset={-49}
             duration={400}
             onClick={() => setShowBar(false)}
           >
