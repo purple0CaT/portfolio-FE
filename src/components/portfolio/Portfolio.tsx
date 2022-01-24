@@ -4,6 +4,7 @@ import PortfolioData from "../../data/portfolioData.json";
 import PortfolioItem from "./PortfolioItem";
 import "./style/Port.scss";
 import memeData from "../../data/memes.json";
+import Ticker from "react-ticker";
 //
 function Portfolio() {
   const { ref, inView, entry } = useInView({
@@ -18,12 +19,39 @@ function Portfolio() {
         style={{ height: "20vh" }}
       >
         <h1>Portfolio</h1>
-        {/*  */}
         <div className="memeContainer">
           <ul className="memeWrapper1 p-0">
             {memeData.length > 0 &&
               memeData.map((img: any, index: number) => (
                 <li className="d-flex mx-2 memeItem" key={index + "mem"}>
+                  <img
+                    src={img.img}
+                    alt="memeImg"
+                    style={{
+                      height: "100%",
+                      aspectRatio: "1/1",
+                      objectFit: "contain",
+                    }}
+                  />
+                </li>
+              ))}
+            {memeData.length > 0 &&
+              memeData.map((img: any, index: number) => (
+                <li className="d-flex mx-2 memeItem" key={index + "mems"}>
+                  <img
+                    src={img.img}
+                    alt="memeImg"
+                    style={{
+                      height: "100%",
+                      aspectRatio: "1/1",
+                      objectFit: "contain",
+                    }}
+                  />
+                </li>
+              ))}
+            {memeData.length > 0 &&
+              memeData.map((img: any, index: number) => (
+                <li className="d-flex mx-2 memeItem" key={index + "mems3"}>
                   <img
                     src={img.img}
                     alt="memeImg"

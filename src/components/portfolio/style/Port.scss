@@ -53,20 +53,22 @@
 }
 .memeContainer {
   position: relative;
+  display: flex;
   height: 50px;
   width: 100%;
   // overflow-x: scroll;
-  // overflow: hidden;
+  overflow: hidden;
   margin-top: auto;
 }
 .memeItem {
+  height: 100%;
   position: relative;
   transition: 0.1s;
   cursor: pointer;
-  &:hover {
-    z-index: 100;
-    transform: scale(2);
-  }
+  // &:hover {
+  //   z-index: 100;
+  //   transform: scale(2);
+  // }
 }
 .memeWrapper1 {
   position: relative;
@@ -111,7 +113,7 @@
   }
   //
   100% {
-    -webkit-transform: translate3d(-100%, 0, 0);
-    transform: translate3d(-100%, 0, 0);
+    -webkit-transform: translate3d(-658px, 0, 0);
+    transform: translate3d(-658px, 0, 0);
   }
 }
