@@ -1,6 +1,7 @@
 import React from "react";
 import { ReactDOM } from "react";
 import "./scroll/Scroll.sass";
+import memeData from "../../data/memes.json";
 //
 const GERMAN_DIGITS = [
   "Null",
@@ -75,18 +76,17 @@ export const ScrollRender = (props: any) => {
   return (
     <>
       <InfiniteScrollLoop>
-        {Array.from(GERMAN_DIGITS).map((digit, index) => (
+        {memeData.map((img: any, index) => (
           <div>
-            <img src="" alt="Meme" width={50} height={50} />
-            {/* <span
+            <img
+              src={img.img}
+              alt="memeImg"
               style={{
-                color: `hsl(${
-                  (index / GERMAN_DIGITS.length) * 360
-                }deg 100% 50%)`,
+                height: "50px",
+                aspectRatio: "1/1",
+                objectFit: "contain",
               }}
-            >
-              {digit}.
-            </span> */}
+            />
           </div>
         ))}
       </InfiniteScrollLoop>
