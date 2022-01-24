@@ -2,7 +2,8 @@ import { Drawer, IconButton } from "@mui/material";
 import React, { useState } from "react";
 import { Link } from "react-scroll";
 import MenuIcon from "@mui/icons-material/Menu";
-
+import CancelIcon from "@mui/icons-material/Cancel";
+//
 function MobileMenu() {
   const [ShowBar, setShowBar] = useState(false);
   return (
@@ -14,6 +15,27 @@ function MobileMenu() {
       )}
       <Drawer anchor="top" open={ShowBar} onClose={() => setShowBar(false)}>
         <div className="mobileMenu">
+          {/* === LOGO */}
+          <div className="mobileMenuLogo">
+            <div className="logo-flip">
+              <div className="logo-flip__inner">
+                <div className="logo-flip-front">
+                  <img src="/logo.png" alt="Logo" style={{ height: "65px" }} />
+                </div>
+                <div className="logo-flip-back">
+                  <img
+                    src="/memes/doggeP.png"
+                    alt="Logo"
+                    style={{ height: "65px" }}
+                  />
+                </div>
+              </div>
+            </div>
+            <IconButton onClick={() => setShowBar(false)}>
+              <CancelIcon fontSize="large" />
+            </IconButton>
+          </div>
+          {/* === Links */}
           <Link
             activeClass="active"
             className="navBtns"

@@ -1,4 +1,5 @@
 $navBarBg: rgba(26, 26, 26, 0.8);
+$mobileNavBarBg: #2f4250;
 //
 .navBarWrap {
   height: 3em;
@@ -38,6 +39,7 @@ $navBarBg: rgba(26, 26, 26, 0.8);
 /* =================================== MOBILE MENU */
 .mobileMenu {
   display: flex;
+  position: relative;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -46,6 +48,31 @@ $navBarBg: rgba(26, 26, 26, 0.8);
   gap: 2rem;
   background-color: rgb(105, 105, 105) !important;
   font-size: 1.5rem;
+}
+.mobileMenuClose {
+  position: absolute;
+  z-index: 100;
+  top: 1rem;
+  right: 1rem;
+}
+.mobileMenuLogo {
+  height: 65px;
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  background-color: $mobileNavBarBg;
+  z-index: 100;
+  top: 0;
+  right: 0;
+  left: 0;
+  //
+  & button {
+    position: absolute;
+    right: 1rem;
+    top: 0;
+    bottom: 0;
+    color: white !important;
+  }
 }
 // LOGO
 .logo {
@@ -62,3 +89,37 @@ $navBarBg: rgba(26, 26, 26, 0.8);
     }
   }
 }
+
+.logo-flip {
+  position: absolute;
+  width: 65px;
+  height: 65px;
+  perspective: 500px;
+  //
+  &__inner {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transition: transform 1s;
+    transform-style: preserve-3d;
+  }
+  //
+  &:hover {
+    & .logo-flip__inner {
+      transform: rotateY(180deg);
+      transition: transform 0.5s;
+    }
+  }
+}
+.logo-flip-front,
+.logo-flip-back {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  backface-visibility: hidden;
+}
+.logo-flip-back {
+  transform: rotateY(180deg);
+}
+// =============== >< =================
