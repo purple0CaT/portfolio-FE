@@ -3,19 +3,6 @@ import { ReactDOM } from "react";
 import "./scroll/Scroll.sass";
 import memeData from "../../data/memes.json";
 //
-const GERMAN_DIGITS = [
-  "Null",
-  "Ein",
-  "Zwei",
-  "Drei",
-  "Vier",
-  "Fünf",
-  "Sechs",
-  "Sieben",
-  "Acht",
-  "Neun",
-];
-
 function InfiniteScrollLoop({
   surroundingBackup = 4,
   outerStyle,
