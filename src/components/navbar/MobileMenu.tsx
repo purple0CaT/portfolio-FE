@@ -32,7 +32,7 @@ function MobileMenu() {
             to="About"
             spy={true}
             smooth={true}
-            offset={-48}
+            offset={-49}
             duration={400}
             onClick={() => setShowBar(false)}
           >

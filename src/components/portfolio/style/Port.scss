@@ -58,7 +58,7 @@
   height: 50px;
   width: 100%;
   // overflow-x: scroll;
-  overflow: hidden;
+  // overflow: hidden;
   // margin-top: auto;
 }
 .memeItem {
@@ -66,10 +66,10 @@
   position: relative;
   transition: 0.1s;
   cursor: pointer;
-  // &:hover {
-  //   z-index: 100;
-  //   transform: scale(2);
-  // }
+  &:hover {
+    z-index: 100;
+    transform: scale(2);
+  }
 }
 .memeWrapper1 {
   position: relative;
