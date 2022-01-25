@@ -5,12 +5,15 @@ import App from "./App";
 import "./index.css";
 import "@fontsource/roboto";
 import { ParallaxProvider } from "react-scroll-parallax";
+import AuthProvider from "./firebase/AuthProvider";
 
 ReactDOM.render(
   <React.StrictMode>
-    <ParallaxProvider>
-      <App />
-    </ParallaxProvider>
+    <AuthProvider>
+      <ParallaxProvider>
+        <App />
+      </ParallaxProvider>
+    </AuthProvider>
   </React.StrictMode>,
   document.getElementById("root"),
 );

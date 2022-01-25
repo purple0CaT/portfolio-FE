@@ -1,0 +1,11 @@
+.adminWrapper {
+  height: calc(100vh - 3rem);
+  background-color: rgb(196, 196, 196);
+  &__login {
+    margin: auto;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

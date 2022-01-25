@@ -1,19 +1,13 @@
-import React, { useEffect, useState } from "react";
-import { useInView } from "react-intersection-observer";
-import { Element } from "react-scroll";
-import About from "./components/about/About";
-import Resume from "./components/contact/Contact";
+import { useEffect, useState } from "react";
+import { BrowserRouter as Router, Link, Route, Routes } from "react-router-dom";
 import Footer from "./components/footer/Footer";
 import Greeting from "./components/greeting/Greeting";
-import Home from "./components/home/Home";
-import Navbar from "./components/navbar/Navbar";
-import Portfolio from "./components/portfolio/Portfolio";
+import AdminPage from "./page/admin/AdminPage";
+import HomePage from "./page/home/HomePage";
 
 function App() {
-  const [Greetings, setGreetings] = useState(true);
-  const { ref, inView, entry } = useInView({
-    threshold: 1,
-  });
+  const [Greetings, setGreetings] = useState(false);
+
   //
   useEffect(() => {
     setTimeout(() => {
@@ -26,24 +20,31 @@ function App() {
         <Greeting />
       ) : (
         <>
-          <Navbar inView={inView} />
-          <div
-            ref={ref}
-            style={{ backgroundColor: "rgb(200, 200, 200)", height: "1px" }}
-          ></div>
-          <Element name="Home">
-            <Home />
-          </Element>
-          <Element name="About">
-            <About />
-          </Element>
-          <Element name="Portfolio">
-            <Portfolio />
-          </Element>
-          <Element name="Contact">
-            <Resume />
-          </Element>
-          <Footer />
+          <Router>
+            <Routes>
+              <Route path="/" element={<HomePage />} />
+              <Route path="/admins" element={<AdminPage />} />
+              {/* DEFAULT ROUTE */}
+              <Route
+                path="*"
+                element={
+                  <main
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      height: "calc(100vh - 3rem)",
+                    }}
+                  >
+                    <Link to="/">
+                      <h1 style={{ color: "tomato" }}>There's nothing here!</h1>
+                    </Link>
+                  </main>
+                }
+              />
+            </Routes>
+            <Footer />
+          </Router>
         </>
       )}
     </>

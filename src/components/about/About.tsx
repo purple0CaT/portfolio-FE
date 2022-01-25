@@ -5,7 +5,7 @@ import "./style/About.scss";
 function About() {
   return (
     <main className="aboutWrapper sectionWrapper">
-      <h1 className="mx-auto">About</h1>
+      <h1 className="m-0 mx-auto">About</h1>
       <Row className="h-100">
         {/*  LEFT COLUMN */}
         <Col
@@ -42,12 +42,7 @@ function About() {
           </section>
         </Col>
         {/* RIGHt COLUMN */}
-        <Col
-          xs="12"
-          md="4"
-          className="d-flex align-items-center"
-          style={{ minHeight: "50%" }}
-        >
+        <Col xs="12" md="4" className="d-flex align-items-center">
           <div style={{ height: "80%", width: "100%", position: "relative" }}>
             <Parallax className="h-100" x={[40, -40]} tagOuter="figure">
               <ParallaxBanner
