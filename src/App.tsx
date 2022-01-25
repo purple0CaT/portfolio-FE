@@ -1,12 +1,15 @@
 import { useEffect, useState } from "react";
 import { BrowserRouter as Router, Link, Route, Routes } from "react-router-dom";
+import AdmAbout from "./components/adminP/tabs/AdmAbout";
+import AdmActivity from "./components/adminP/tabs/AdmActivity";
+import AdmPortfolio from "./components/adminP/tabs/AdmPortfolio";
 import Footer from "./components/footer/Footer";
 import Greeting from "./components/greeting/Greeting";
 import AdminPage from "./page/admin/AdminPage";
 import HomePage from "./page/home/HomePage";
 
 function App() {
-  const [Greetings, setGreetings] = useState(false);
+  const [Greetings, setGreetings] = useState(true);
 
   //
   useEffect(() => {
@@ -22,8 +25,12 @@ function App() {
         <>
           <Router>
             <Routes>
-              <Route path="/" element={<HomePage />} />
-              <Route path="/admins" element={<AdminPage />} />
+              <Route index element={<HomePage />} />
+              <Route path="admins" element={<AdminPage />}>
+                <Route path="activity" element={<AdmActivity />} />
+                <Route path="portfolio" element={<AdmPortfolio />} />
+                <Route path="about" element={<AdmAbout />} />
+              </Route>
               {/* DEFAULT ROUTE */}
               <Route
                 path="*"

@@ -1,11 +1,82 @@
+$AdminNavBBG: rgb(65, 101, 131);
+$AdminASideBG: rgb(134, 134, 134);
+
 .adminWrapper {
   height: calc(100vh - 3rem);
-  background-color: rgb(196, 196, 196);
+  background-color: rgb(212, 212, 212);
   &__login {
     margin: auto;
     height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+  &__panel {
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    // background-color: blue;
+  }
+}
+//  NAVBAR
+.adminNavBar {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  inset: 0 0 auto 0;
+  height: 3rem;
+  padding: 0.5rem;
+  z-index: 10;
+  background-color: $AdminNavBBG;
+  //
+  & button {
+    color: white;
+    background-color: $AdminNavBBG;
+  }
+}
+.adminASide {
+  position: fixed;
+  align-items: center;
+  inset: 0 auto auto 0;
+  // min-height: 50vh;
+  padding: 4rem 0 1rem 0;
+  color: white;
+  width: 10rem;
+  z-index: 1;
+  overflow: hidden;
+  background-color: $AdminASideBG;
+  // Button
+  & .ASideButton {
+    display: flex;
+    justify-content: start;
+    gap: 1rem;
+    align-items: center;
+    color: white !important;
+    cursor: pointer;
+    margin: 1rem 0;
+    padding: 0.5rem;
+    transition: 0.1s;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    //
+    &:hover {
+      text-decoration: none;
+      box-shadow: 0 0 5px white;
+      transform: scale(1.1);
+    }
+    &:active {
+      transform: scale(1);
+      box-shadow: 0 0 5px rgb(201, 201, 201);
+    }
+  }
+  // Selected Button
+  & .activeASideButton {
+    box-shadow: 0 0 5px rgb(201, 201, 201);
   }
 }

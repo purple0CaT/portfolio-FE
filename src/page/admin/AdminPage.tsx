@@ -1,3 +1,4 @@
+import AdminPanel from "../../components/adminP/AdminPanel";
 import Login from "../../components/login/Login";
 import { useAuth } from "../../firebase/AuthProvider";
 import "./style/Admin.scss";
@@ -7,7 +8,7 @@ function AdminPage() {
   return (
     <div className="adminWrapper">
       {currentUser ? (
-        <div> User</div>
+        <AdminPanel />
       ) : (
         <div className="adminWrapper__login">
           <Login />
