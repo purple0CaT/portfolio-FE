@@ -40,13 +40,19 @@ $AdminASideBG: rgb(134, 134, 134);
   position: fixed;
   align-items: center;
   inset: 0 auto auto 0;
-  // min-height: 50vh;
-  padding: 4rem 0 1rem 0;
+  min-height: calc(100vh - 3rem);
+  padding: 0 0 1rem 0;
   color: white;
   width: 13rem;
-  z-index: 1;
+  // z-index: 11;
   overflow: hidden;
   background-color: $AdminASideBG;
+  // header
+  & .adminASideHeader {
+    height: 3rem;
+    width: 100%;
+    background-color: $AdminNavBBG;
+  }
   // Button
   & .ASideButton {
     display: flex;
@@ -56,7 +62,7 @@ $AdminASideBG: rgb(134, 134, 134);
     color: white !important;
     cursor: pointer;
     margin: 1rem 0;
-    padding: 0.5rem;
+    padding: 0.5rem 1rem;
     transition: 0.1s;
     -webkit-touch-callout: none;
     -webkit-user-select: none;
@@ -75,8 +81,25 @@ $AdminASideBG: rgb(134, 134, 134);
       box-shadow: 0 0 5px rgb(201, 201, 201);
     }
   }
+
   // Selected Button
   & .activeASideButton {
     box-shadow: 0 0 5px rgb(201, 201, 201);
   }
+}
+
+// === Menu Button
+.adminMenuButton {
+  position: absolute;
+  inset: 80% auto auto -5px;
+  background-color: $AdminNavBBG;
+  border-radius: 20px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 5px grey;
+  cursor: pointer;
+  height: 50px;
+  width: 50px;
 }

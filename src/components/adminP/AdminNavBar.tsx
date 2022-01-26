@@ -16,10 +16,7 @@ function AdminNavBar() {
         </Link>
       </div>
       <div>
-        {" "}
-        <h4 className="text-white m-0 text-center">
-          Hello, {currentUser.email}
-        </h4>
+        <h6 className="text-white m-0 text-center">{currentUser.email}</h6>
       </div>
       <Button variant="outline-danger" size="sm" onClick={logOut}>
         Log Out
