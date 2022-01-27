@@ -24,17 +24,6 @@ function AdminASide({ closeDrawer }: ASideImport) {
         <span className="font-weight-bold">Activity</span>
       </NavLink>
       <NavLink
-        to="/admins/portfolio"
-        className={({ isActive }) => {
-          return `${isActive && "activeASideButton"} ASideButton`;
-        }}
-        end
-        onClick={closeDrawer}
-      >
-        <WorkIcon />
-        <span className="font-weight-bold">Portfolio</span>
-      </NavLink>
-      <NavLink
         to="/admins/about"
         className={({ isActive }) => {
           return `${isActive && "activeASideButton"} ASideButton`;
@@ -44,6 +33,17 @@ function AdminASide({ closeDrawer }: ASideImport) {
       >
         <PersonOutlineIcon />
         <span className="font-weight-bold">About</span>
+      </NavLink>
+      <NavLink
+        to="/admins/portfolio"
+        className={({ isActive }) => {
+          return `${isActive && "activeASideButton"} ASideButton`;
+        }}
+        end
+        onClick={closeDrawer}
+      >
+        <WorkIcon />
+        <span className="font-weight-bold">Portfolio</span>
       </NavLink>
     </section>
   );

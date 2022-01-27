@@ -1,8 +1,28 @@
+import { useEffect, useState } from "react";
 import { Col, Row } from "react-bootstrap";
-import { ParallaxBanner, Parallax } from "react-scroll-parallax";
+import { Parallax, ParallaxBanner } from "react-scroll-parallax";
+import { getAbout } from "../../firebase/FbHooks";
 import "./style/About.scss";
-
+//
+interface AboutType {
+  image: string;
+  extraDes: string;
+  id: string;
+  description: string;
+}
+//
 function About() {
+  const [AboutData, setAboutData] = useState<AboutType | null>(null);
+  //
+  async function loadAboutData() {
+    const someData = await getAbout();
+    setAboutData(someData[0]);
+  }
+  //
+  useEffect(() => {
+    loadAboutData();
+  }, []);
+
   return (
     <main className="aboutWrapper sectionWrapper">
       <h1 className="m-0 mx-auto">About</h1>
@@ -26,8 +46,8 @@ function About() {
               <span className="greeting-span">Hello there</span>, I'm Istvan
               Sandor
             </h3>
-            <p>asdasdasdasd</p>
-            <p className="mt-auto">asdasd</p>
+            <p>{AboutData?.description}</p>
+            <p className="mt-auto">{AboutData?.extraDes}</p>
             <div className="mx-auto">
               <a
                 className="text-decoration-none downloadCV"
@@ -49,8 +69,8 @@ function About() {
                 className="h-100"
                 layers={[
                   {
-                    image: "https://imgur.com/f9GTr5U.jpg",
-                    amount: -0.3,
+                    image: AboutData?.image,
+                    amount: -0.2,
                     props: { style: { boxShadow: "0 0 20px red" } },
                   },
                 ]}

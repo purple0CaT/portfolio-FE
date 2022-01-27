@@ -2,7 +2,7 @@ $AdminNavBBG: rgb(65, 101, 131);
 $AdminASideBG: rgb(134, 134, 134);
 
 .adminWrapper {
-  height: calc(100vh - 3rem);
+  min-height: calc(100vh - 3rem);
   background-color: rgb(212, 212, 212);
   &__login {
     margin: auto;
@@ -107,4 +107,24 @@ $AdminASideBG: rgb(134, 134, 134);
   cursor: pointer;
   height: 50px;
   width: 50px;
+}
+
+// === Admin sections
+.adminAboutSection {
+  &__info {
+    padding: 1rem 0;
+    display: flex;
+    height: 100%;
+    flex-direction: column !important;
+    align-items: center;
+    gap: 1rem;
+  }
+  &__form {
+    padding: 1rem 0;
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
 }

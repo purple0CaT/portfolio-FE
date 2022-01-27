@@ -1,17 +1,38 @@
 import { useInView } from "react-intersection-observer";
 import { Parallax } from "react-scroll-parallax";
-import PortfolioData from "../../data/portfolioData.json";
+// import PortfolioData from "../../data/portfolioData.json";
 import PortfolioItem from "./PortfolioItem";
 import "./style/Port.scss";
 import HorizontalMeme from "./HorizontalMeme";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { getPortfolio } from "../../firebase/FbHooks";
+//
+interface PortfolioType {
+  createdAt: any;
+  description: string;
+  id: string;
+  image: string;
+  title: string;
+  url: string;
+}
 //
 function Portfolio() {
   const [visibleTicker, setVisibleTicker] = useState(false);
+  const [PortfolioData, setPortfolioData] = useState<PortfolioType[] | []>([]);
   const { ref, inView, entry } = useInView({
     threshold: 0.5,
     triggerOnce: true,
   });
+  //
+  //
+  async function loadPortfolioData() {
+    const dataFetched = await getPortfolio();
+    setPortfolioData(dataFetched);
+  }
+  //
+  useEffect(() => {
+    loadPortfolioData();
+  }, []);
   //
   return (
     <main className="portWrapper sectionWrapper">
