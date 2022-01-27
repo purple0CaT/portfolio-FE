@@ -1,4 +1,4 @@
-import { Drawer, NoSsr } from "@mui/material";
+import { Drawer, Grid, NoSsr } from "@mui/material";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { useState } from "react";
 import { Outlet } from "react-router-dom";
@@ -18,22 +18,29 @@ function AdminPanel() {
     setVisibleDrawer(false);
   };
   return (
-    <>
+    <Grid container className="h-100">
       <AdminNavBar />
       {mediaQ ? (
-        <AdminASide />
+        <Grid item sm={4} md={3} lg={2} xl={1} className="h-100">
+          <AdminASide />
+        </Grid>
       ) : (
         <>
           <Drawer anchor={"left"} open={visibleDrawer} onClose={toggleDrawer}>
             <AdminASide closeDrawer={closeDrawer} />
+            <div
+              style={{ backgroundColor: "rgb(138, 81, 109)", height: "3rem" }}
+            ></div>
           </Drawer>
           <div className="adminMenuButton" onClick={toggleDrawer}>
             <MenuIcon />
           </div>
         </>
       )}
-      <Outlet />
-    </>
+      <Grid item xs={12} sm={8} md={9} lg={10} xl={11} className="h-100 pt-5">
+        <Outlet />
+      </Grid>
+    </Grid>
   );
 }
 
