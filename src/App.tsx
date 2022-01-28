@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { BrowserRouter as Router, Link, Route, Routes } from "react-router-dom";
 import AdmAbout from "./components/adminP/tabs/about/AdmAbout";
 import AdmActivity from "./components/adminP/tabs/AdmActivity";
-import AdmPortfolio from "./components/adminP/tabs/AdmPortfolio";
+import AdmPortfolio from "./components/adminP/tabs/portfolio/AdmPortfolio";
 import Footer from "./components/footer/Footer";
 import Greeting from "./components/greeting/Greeting";
 import AdminPage from "./page/admin/AdminPage";

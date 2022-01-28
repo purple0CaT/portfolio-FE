@@ -21,7 +21,7 @@ function AdminPanel() {
     <Grid container className="h-100">
       <AdminNavBar />
       {mediaQ ? (
-        <Grid item sm={4} md={3} lg={2} xl={1} className="h-100">
+        <Grid item sm={3} md={2} xl={1} className="h-100">
           <AdminASide />
         </Grid>
       ) : (
@@ -37,7 +37,7 @@ function AdminPanel() {
           </div>
         </>
       )}
-      <Grid item xs={12} sm={8} md={9} lg={10} xl={11} className="pt-5">
+      <Grid item xs={12} sm={9} md={10} xl={11} className="pt-5 px-3">
         <Outlet />
       </Grid>
     </Grid>

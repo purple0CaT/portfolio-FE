@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Button, Form } from "react-bootstrap";
+import { updateAbout } from "../../../../firebase/FbHooks";
 //
 interface AboutType {
   AboutData: {
@@ -8,9 +9,11 @@ interface AboutType {
     id: string;
     description: string;
   } | null;
+  reFetch: () => {};
 }
 //
-function AAboutForm({ AboutData }: AboutType) {
+function AAboutForm({ AboutData, reFetch }: AboutType) {
+  const [Loading, setLoading] = useState(false);
   const [AboutForm, setAboutForm] = useState({
     description: "",
     extraDes: "",
@@ -18,14 +21,17 @@ function AAboutForm({ AboutData }: AboutType) {
   //
   const submitUpdates = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    alert("Submited!");
+    setLoading(true);
+    const complete = await updateAbout(AboutData?.id, AboutForm);
+    if (complete) reFetch();
+    setLoading(false);
   };
   //
   useEffect(() => {
     AboutData && setAboutForm(AboutData);
   }, []);
   return (
-    <Form onSubmit={submitUpdates}>
+    <Form onSubmit={submitUpdates} style={{ width: "90%" }}>
       {AboutForm && (
         <>
           <Form.Group id="aboutUpdateDesc">
@@ -52,7 +58,7 @@ function AAboutForm({ AboutData }: AboutType) {
             />
           </Form.Group>
           <hr />
-          <Button type="submit" variant="success" size="sm">
+          <Button disabled={Loading} type="submit" variant="success" size="sm">
             Submit
           </Button>
         </>

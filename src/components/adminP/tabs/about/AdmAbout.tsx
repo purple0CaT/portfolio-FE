@@ -29,7 +29,7 @@ function AdmAbout() {
         <AAboutInfo AboutData={AboutData} />
       </Grid>
       <Grid item xs={12} md={6} className="adminAboutSection__form">
-        <AAboutForm AboutData={AboutData} />
+        <AAboutForm AboutData={AboutData} reFetch={loadAboutData} />
       </Grid>
     </Grid>
   ) : (

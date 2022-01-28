@@ -6,7 +6,7 @@ $AdminASideBG: rgb(134, 134, 134);
   background-color: rgb(212, 212, 212);
   &__login {
     margin: auto;
-    height: 100%;
+    height: calc(100vh - 3rem);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -126,5 +126,24 @@ $AdminASideBG: rgb(134, 134, 134);
     // align-items: center;
     justify-content: center;
     text-align: center;
+  }
+}
+// === Admin Portfolio
+.adminPortfolio {
+  display: flex;
+  width: 100%;
+  overflow-y: scroll;
+  padding: 1rem;
+  //
+  & .aPortfolioCard {
+    display: flex;
+    flex-direction: column;
+    padding: 0 0.5rem 0.5rem 0.5rem;
+    width: 15rem;
+    overflow: hidden;
+    align-items: center;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0 0 5px grey;
   }
 }

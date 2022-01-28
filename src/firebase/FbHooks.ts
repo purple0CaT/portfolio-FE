@@ -1,4 +1,4 @@
-import { collection, getDocs } from "firebase/firestore";
+import { collection, doc, getDocs, updateDoc } from "firebase/firestore";
 import { db } from "./firebase-config";
 
 const aboutCollection = collection(db, "about");
@@ -11,6 +11,11 @@ export const getAbout = async () => {
     id: doc.id,
   }));
   return aboutData;
+};
+export const updateAbout = async (id: any, data: any) => {
+  const userDoc = doc(db, "about", id);
+  await updateDoc(userDoc, data);
+  return true;
 };
 // Portfolio data
 export const getPortfolio = async () => {
