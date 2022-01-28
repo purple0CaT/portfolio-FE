@@ -1,5 +1,6 @@
 import { Grid } from "@mui/material";
 import { useEffect, useState } from "react";
+import { Spinner } from "react-bootstrap";
 import { getAbout } from "../../../../firebase/FbHooks";
 import AAboutForm from "./AAboutForm";
 import AAboutInfo from "./AAboutInfo";
@@ -22,8 +23,8 @@ function AdmAbout() {
   useEffect(() => {
     loadAboutData();
   }, []);
-  return (
-    <Grid container className="h-100">
+  return AboutData ? (
+    <Grid container>
       <Grid item xs={12} md={6} className="adminAboutSection__info">
         <AAboutInfo AboutData={AboutData} />
       </Grid>
@@ -31,6 +32,10 @@ function AdmAbout() {
         <AAboutForm AboutData={AboutData} />
       </Grid>
     </Grid>
+  ) : (
+    <div className="h-100 d-flex align-items-center justify-content-center">
+      <Spinner animation="border" variant="info" />
+    </div>
   );
 }
 

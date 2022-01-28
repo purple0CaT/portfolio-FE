@@ -37,7 +37,7 @@ function AdminPanel() {
           </div>
         </>
       )}
-      <Grid item xs={12} sm={8} md={9} lg={10} xl={11} className="h-100 pt-5">
+      <Grid item xs={12} sm={8} md={9} lg={10} xl={11} className="pt-5">
         <Outlet />
       </Grid>
     </Grid>

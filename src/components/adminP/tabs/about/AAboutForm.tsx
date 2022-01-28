@@ -29,7 +29,7 @@ function AAboutForm({ AboutData }: AboutType) {
       {AboutForm && (
         <>
           <Form.Group id="aboutUpdateDesc">
-            <Form.Label>Description</Form.Label>
+            <Form.Label className="font-weight-bold">Description</Form.Label>
             <Form.Control
               type="text"
               as="textarea"
@@ -41,7 +41,7 @@ function AAboutForm({ AboutData }: AboutType) {
             />
           </Form.Group>
           <Form.Group id="aboutUpdateExtraDes">
-            <Form.Label>Description</Form.Label>
+            <Form.Label className="font-weight-bold">Extra Info</Form.Label>
             <Form.Control
               as="textarea"
               rows={2}
