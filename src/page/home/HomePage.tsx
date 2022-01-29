@@ -11,12 +11,14 @@ function HomePage() {
     threshold: 1,
   });
   return (
-    <>
+    <div className="position-relative">
       <div
         ref={ref}
         style={{
           backgroundColor: "rgb(200, 200, 200)",
           height: "1px",
+          position: "absolute",
+          top: 0,
         }}
       ></div>{" "}
       <Navbar inView={inView} />
@@ -32,7 +34,7 @@ function HomePage() {
       <Element name="Contact">
         <Contact />
       </Element>
-    </>
+    </div>
   );
 }
 

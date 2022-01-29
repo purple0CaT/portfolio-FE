@@ -1,4 +1,5 @@
-import { Parallax, ParallaxBanner } from "react-scroll-parallax";
+import { ParallaxBanner } from "react-scroll-parallax";
+import HChildren from "./HChildren";
 import "./style/Home.scss";
 //
 function Home() {
@@ -8,6 +9,7 @@ function Home() {
         className="your-class"
         layers={[
           {
+            children: <HChildren />,
             image: "https://i.imgur.com/qJQezzj.jpg",
             amount: 0.12,
           },
@@ -15,7 +17,7 @@ function Home() {
         style={{
           height: "100%",
         }}
-      ></ParallaxBanner>
+      />
     </main>
   );
 }

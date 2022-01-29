@@ -10,7 +10,6 @@ import HomePage from "./page/home/HomePage";
 
 function App() {
   const [Greetings, setGreetings] = useState(true);
-
   //
   useEffect(() => {
     setTimeout(() => {
