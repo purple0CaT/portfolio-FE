@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { Link } from "react-scroll";
 import { getActivity } from "../../firebase/FbHooks";
 import ActivityItem from "./ActivityItem";
+import scrollIntoView from "scroll-into-view";
 //
 function HChildren() {
   const [ActivityData, setActivityData] = useState<any | null>(null);
@@ -11,13 +12,7 @@ function HChildren() {
   const ref: any = useRef();
   //
   const handleScrollTop = () => {
-    // window.scrollTo(0, 0);
-    // window.scrollTo(0, ref.current.offsetTop)
-    ref.current.scrollIntoView({
-      // behavior: true,
-      block: "nearest",
-      // inline: "start",
-    });
+    scrollIntoView(ref.current);
   };
   //
   async function loadActivityData() {
