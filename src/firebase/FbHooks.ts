@@ -1,8 +1,16 @@
-import { collection, doc, getDocs, updateDoc } from "firebase/firestore";
+import {
+  collection,
+  doc,
+  getDocs,
+  orderBy,
+  query,
+  updateDoc,
+} from "firebase/firestore";
 import { db } from "./firebase-config";
 
 const aboutCollection = collection(db, "about");
 const portfolioCollection = collection(db, "portfolio");
+const activityCollection = collection(db, "activities");
 //  About Datas
 export const getAbout = async () => {
   const data = await getDocs(aboutCollection);
@@ -25,4 +33,15 @@ export const getPortfolio = async () => {
     id: doc.id,
   }));
   return portData;
+};
+// Activity
+export const getActivity = async () => {
+  const q = query(activityCollection, orderBy("createdAt", "desc"));
+  const data = await getDocs(q);
+  const activData = data.docs.map((doc: any) => ({
+    ...doc.data(),
+    id: doc.id,
+  }));
+  const sortedData = activData;
+  return activData;
 };
