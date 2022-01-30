@@ -41,6 +41,12 @@
   width: 90%;
   height: 50%;
   overflow-y: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  //
+  &::-webkit-scrollbar {
+    display: none;
+  }
   //
   & .activityHeader {
     background-color: rgba(255, 255, 255, 0.9);
@@ -60,6 +66,6 @@
     flex-direction: column;
     box-shadow: 0 0 5px grey;
     background-color: rgba(255, 255, 255, 0.8);
-    margin: 1rem 0;
+    margin-bottom: 1rem;
   }
 }

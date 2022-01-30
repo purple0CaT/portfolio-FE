@@ -1,4 +1,4 @@
-import { Grid } from "@mui/material";
+import { Grid, useMediaQuery } from "@mui/material";
 import { useEffect, useState } from "react";
 import { Link } from "react-scroll";
 import { getActivity } from "../../firebase/FbHooks";
@@ -6,6 +6,7 @@ import ActivityItem from "./ActivityItem";
 //
 function HChildren() {
   const [ActivityData, setActivityData] = useState<any | null>(null);
+  const match = useMediaQuery("(min-width:900px)");
   //
   async function loadActivityData() {
     const fetchedData = await getActivity();
@@ -20,9 +21,10 @@ function HChildren() {
     <Grid
       container
       style={{
-        height: "100%",
-        width: "100%",
-        padding: "7rem 0",
+        position: "absolute",
+        inset: "0 0 auto 0",
+        height: "100vh",
+        zIndex: 10,
       }}
     >
       <Grid
@@ -30,7 +32,7 @@ function HChildren() {
         xs={12}
         md={6}
         className="d-flex align-items-center justify-content-center w-100"
-        style={{ minHeight: "50%" }}
+        style={{ minHeight: "40%" }}
       >
         <div className="homeLeftColumn">
           <Link
@@ -50,7 +52,7 @@ function HChildren() {
         xs={12}
         md={6}
         className="d-flex align-items-center justify-content-center w-100 "
-        style={{ minHeight: "50%" }}
+        style={{ height: match ? "unset" : "60%" }}
       >
         <ul className="homeRightColumn">
           <h5 className="activityHeader">Latest Activity</h5>

@@ -5,11 +5,12 @@ import "./style/Home.scss";
 function Home() {
   return (
     <main className="homeWrapper">
+      <HChildren />
       <ParallaxBanner
         className="your-class"
         layers={[
           {
-            children: <HChildren />,
+            // children: ,
             image: "https://i.imgur.com/qJQezzj.jpg",
             amount: 0.12,
           },
