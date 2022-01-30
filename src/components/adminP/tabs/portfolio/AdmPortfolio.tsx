@@ -23,7 +23,7 @@ function AdmPortfolio() {
         <ul className="adminPortfolio">
           {PortfolioData &&
             PortfolioData.map((item: any) => (
-              <APortfolioCard key={item.id} item={item} />
+              <APortfolioCard key={item.id +'admin'} item={item} />
             ))}
         </ul>
       </Grid>

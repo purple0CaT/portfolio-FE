@@ -5,7 +5,7 @@ function Contact() {
   return (
     <div className="resumWrapper sectionWrapper">
       <h1 className="text-center">Contact</h1>
-      <ScrollRender />
+      {/* <ScrollRender /> */}
     </div>
   );
 }

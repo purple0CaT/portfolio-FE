@@ -12,13 +12,20 @@ function HChildren() {
   const ref: any = useRef();
   //
   const handleScrollTop = () => {
-    scrollIntoView(ref.current);
+    scrollIntoView(ref.current, {
+      validTarget: function (target: any, parentsScrolled: any) {
+        return (
+          parentsScrolled < 2 &&
+          target !== window &&
+          !target.matches(".dontScroll")
+        );
+      },
+    });
   };
   //
   async function loadActivityData() {
     const fetchedData = await getActivity();
     setActivityData(fetchedData);
-    console.log(fetchedData);
   }
   //
   useEffect(() => {
@@ -60,7 +67,7 @@ function HChildren() {
         item
         xs={12}
         md={6}
-        className="d-flex align-items-center justify-content-center w-100 "
+        className="d-flex align-items-center justify-content-center w-100 dontScroll"
         style={{ height: match ? "unset" : "60%" }}
       >
         <ul className="homeRightColumn">
@@ -69,7 +76,7 @@ function HChildren() {
           {/* Children items */}
           {ActivityData &&
             ActivityData.map((item: any) => (
-              <ActivityItem item={item} key={item.id} />
+              <ActivityItem item={item} key={item.id+'home'} />
             ))}
           {/*  Back to TOP */}
           <div className="w-100 d-flex justify-content-center mb-2">
