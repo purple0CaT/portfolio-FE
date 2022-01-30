@@ -14,9 +14,9 @@ function HChildren() {
     // window.scrollTo(0, 0);
     // window.scrollTo(0, ref.current.offsetTop)
     ref.current.scrollIntoView({
-      behavior: "smooth",
+      // behavior: true,
       block: "nearest",
-      inline: "start",
+      // inline: "start",
     });
   };
   //
