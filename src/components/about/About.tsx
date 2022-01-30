@@ -1,8 +1,12 @@
+import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
+import { IconButton } from "@mui/material";
 import { useEffect, useState } from "react";
 import { Col, Row } from "react-bootstrap";
+import { Link } from "react-scroll";
 import { Parallax, ParallaxBanner } from "react-scroll-parallax";
 import { getAbout } from "../../firebase/FbHooks";
 import "./style/About.scss";
+
 //
 interface AboutType {
   image: string;
@@ -25,7 +29,22 @@ function About() {
 
   return (
     <main className="aboutWrapper sectionWrapper">
-      <h1 className="m-0 mx-auto">About</h1>
+      <h1 className="m-0 mx-auto position-relative">
+        About
+        <div className="nextSectionTab">
+          <Link
+            to="Portfolio"
+            spy={true}
+            smooth={true}
+            offset={-48}
+            duration={400}
+          >
+            <IconButton size="small">
+              <ArrowForwardIcon />
+            </IconButton>
+          </Link>
+        </div>
+      </h1>
       <Row className="h-100">
         {/*  LEFT COLUMN */}
         <Col

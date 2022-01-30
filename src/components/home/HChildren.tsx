@@ -13,6 +13,7 @@ function HChildren() {
   //
   const handleScrollTop = () => {
     scrollIntoView(ref.current, {
+      time: 300,
       validTarget: function (target: any, parentsScrolled: any) {
         return (
           parentsScrolled < 2 &&
@@ -76,7 +77,7 @@ function HChildren() {
           {/* Children items */}
           {ActivityData &&
             ActivityData.map((item: any) => (
-              <ActivityItem item={item} key={item.id+'home'} />
+              <ActivityItem item={item} key={item.id + "home"} />
             ))}
           {/*  Back to TOP */}
           <div className="w-100 d-flex justify-content-center mb-2">

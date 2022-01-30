@@ -1,11 +1,13 @@
+import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
+import { IconButton } from "@mui/material";
+import { useEffect, useState } from "react";
 import { useInView } from "react-intersection-observer";
+import { Link } from "react-scroll";
 import { Parallax } from "react-scroll-parallax";
-// import PortfolioData from "../../data/portfolioData.json";
+import { getPortfolio } from "../../firebase/FbHooks";
+import HorizontalMeme from "./HorizontalMeme";
 import PortfolioItem from "./PortfolioItem";
 import "./style/Port.scss";
-import HorizontalMeme from "./HorizontalMeme";
-import { useEffect, useState } from "react";
-import { getPortfolio } from "../../firebase/FbHooks";
 //
 interface PortfolioType {
   createdAt: any;
@@ -41,10 +43,23 @@ function Portfolio() {
         style={{ height: "20vh" }}
       >
         <h1
-          style={{ cursor: "pointer" }}
+          style={{ cursor: "pointer", position: "relative" }}
           onClick={() => setVisibleTicker(!visibleTicker)}
         >
           Portfolio
+          <div className="nextSectionTab">
+            <Link
+              to="Contact"
+              spy={true}
+              smooth={true}
+              offset={-48}
+              duration={400}
+            >
+              <IconButton size="small">
+                <ArrowForwardIcon />
+              </IconButton>
+            </Link>
+          </div>
         </h1>
         {visibleTicker && <HorizontalMeme />}
       </section>
