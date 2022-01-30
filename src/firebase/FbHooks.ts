@@ -42,6 +42,5 @@ export const getActivity = async () => {
     ...doc.data(),
     id: doc.id,
   }));
-  const sortedData = activData;
   return activData;
 };

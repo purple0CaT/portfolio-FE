@@ -1,5 +1,6 @@
-import { Grid, useMediaQuery } from "@mui/material";
-import { useEffect, useState } from "react";
+import ArrowCircleUpIcon from "@mui/icons-material/ArrowCircleUp";
+import { Grid, IconButton, useMediaQuery } from "@mui/material";
+import { useEffect, useRef, useState } from "react";
 import { Link } from "react-scroll";
 import { getActivity } from "../../firebase/FbHooks";
 import ActivityItem from "./ActivityItem";
@@ -7,6 +8,17 @@ import ActivityItem from "./ActivityItem";
 function HChildren() {
   const [ActivityData, setActivityData] = useState<any | null>(null);
   const match = useMediaQuery("(min-width:900px)");
+  const ref: any = useRef();
+  //
+  const handleScrollTop = () => {
+    // window.scrollTo(0, 0);
+    // window.scrollTo(0, ref.current.offsetTop)
+    ref.current.scrollIntoView({
+      behavior: "smooth",
+      block: "nearest",
+      inline: "start",
+    });
+  };
   //
   async function loadActivityData() {
     const fetchedData = await getActivity();
@@ -27,6 +39,7 @@ function HChildren() {
         zIndex: 10,
       }}
     >
+      {/* LEFT */}
       <Grid
         item
         xs={12}
@@ -47,6 +60,7 @@ function HChildren() {
           </Link>
         </div>
       </Grid>
+      {/* RIGHT */}
       <Grid
         item
         xs={12}
@@ -55,11 +69,23 @@ function HChildren() {
         style={{ height: match ? "unset" : "60%" }}
       >
         <ul className="homeRightColumn">
+          <div ref={ref}></div>
           <h5 className="activityHeader">Latest Activity</h5>
+          {/* Children items */}
           {ActivityData &&
             ActivityData.map((item: any) => (
               <ActivityItem item={item} key={item.id} />
             ))}
+          {/*  Back to TOP */}
+          <div className="w-100 d-flex justify-content-center mb-2">
+            <IconButton
+              color="info"
+              onClick={handleScrollTop}
+              style={{ backgroundColor: "white" }}
+            >
+              <ArrowCircleUpIcon />
+            </IconButton>
+          </div>
         </ul>
       </Grid>
     </Grid>
