@@ -9,7 +9,7 @@ interface AboutType {
 //
 function AAboutInfo({ AboutData }: AboutType) {
   return (
-    <>
+    <section className="adminAboutInfo">
       <img
         src={AboutData?.image}
         alt="Profile picture"
@@ -19,7 +19,7 @@ function AAboutInfo({ AboutData }: AboutType) {
       <p>{AboutData?.description}</p>
       <h5 className="font-weight-bold m-0">Extra Info</h5>
       <p>{AboutData?.extraDes}</p>
-    </>
+    </section>
   );
 }
 

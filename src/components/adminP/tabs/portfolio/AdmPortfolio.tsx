@@ -17,21 +17,27 @@ function AdmPortfolio() {
     loadAboutData();
   }, []);
   return (
-    // <section className="h-100 w-100">
-    <Grid container>
+    <Grid container className="h-100">
       <Grid item xs={12} md={8}>
-        <ul className="adminPortfolio">
-          {PortfolioData &&
-            PortfolioData.map((item: any) => (
-              <APortfolioCard key={item.id +'admin'} item={item} />
-            ))}
-        </ul>
+        <section className="d-flex align-items-center h-100 p-2">
+          <ul className="adminPortfolio">
+            {PortfolioData &&
+              PortfolioData.map((item: any) => (
+                <APortfolioCard
+                  key={item.id + "admin"}
+                  item={item}
+                  reFetch={loadAboutData}
+                />
+              ))}
+          </ul>
+        </section>
       </Grid>
       <Grid item xs={12} md={4}>
-        <APortfolioForm />{" "}
+        <section className="d-flex align-items-center h-100">
+          <APortfolioForm reFetch={loadAboutData} />
+        </section>
       </Grid>
     </Grid>
-    // </section>
   );
 }
 

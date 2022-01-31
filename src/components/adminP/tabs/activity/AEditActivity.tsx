@@ -29,6 +29,7 @@ function AEditActivity({ reFetch, handleModal, item }: any) {
         className="p-3 d-flex align-items-center flex-column justify-content-around"
         style={{
           backgroundColor: "white",
+          borderRadius: "10px",
         }}
       >
         <form className="text-center" onSubmit={handleEditActivity}>

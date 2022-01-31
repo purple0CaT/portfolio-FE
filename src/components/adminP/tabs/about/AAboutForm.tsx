@@ -32,48 +32,55 @@ function AAboutForm({ AboutData, reFetch }: AboutType) {
     AboutData && setAboutForm(AboutData);
   }, []);
   return (
-    <Form onSubmit={submitUpdates} style={{ width: "90%" }}>
+    <section className="adminAboutForm">
       {AboutForm && (
-        <>
-          <Form.Group id="aboutUpdateDesc" className="mb-2">
-            <Form.Label className="font-weight-bold">Description</Form.Label>
-            <Form.Control
-              type="text"
-              as="textarea"
-              rows={5}
-              value={AboutForm.description}
-              onChange={(e) =>
-                setAboutForm({ ...AboutForm, description: e.target.value })
-              }
-            />
-          </Form.Group>
-          <Form.Group id="aboutUpdateExtraDes" className="mb-2">
-            <Form.Label className="font-weight-bold">Extra Info</Form.Label>
-            <Form.Control
-              as="textarea"
-              rows={2}
-              value={AboutForm.extraDes}
-              onChange={(e) =>
-                setAboutForm({ ...AboutForm, extraDes: e.target.value })
-              }
-            />
-          </Form.Group>
-          <Form.Group id="aboutUpdateExtraDes" className="mb-2">
-            <Form.Label className="font-weight-bold">Extra Info</Form.Label>
-            <Form.Control
-              value={AboutForm.image}
-              onChange={(e) =>
-                setAboutForm({ ...AboutForm, image: e.target.value })
-              }
-            />
-          </Form.Group>
-          <hr />
-          <Button disabled={Loading} type="submit" variant="success" size="sm">
-            Submit
-          </Button>
-        </>
+        <Form onSubmit={submitUpdates} style={{ width: "100%" }}>
+          <>
+            <Form.Group id="aboutUpdateDesc" className="mb-2">
+              <Form.Label className="font-weight-bold">Description</Form.Label>
+              <Form.Control
+                type="text"
+                as="textarea"
+                rows={5}
+                value={AboutForm.description}
+                onChange={(e) =>
+                  setAboutForm({ ...AboutForm, description: e.target.value })
+                }
+              />
+            </Form.Group>
+            <Form.Group id="aboutUpdateExtraDes" className="mb-2">
+              <Form.Label className="font-weight-bold">Extra Info</Form.Label>
+              <Form.Control
+                as="textarea"
+                rows={2}
+                value={AboutForm.extraDes}
+                onChange={(e) =>
+                  setAboutForm({ ...AboutForm, extraDes: e.target.value })
+                }
+              />
+            </Form.Group>
+            <Form.Group id="aboutUpdateExtraDes" className="mb-2">
+              <Form.Label className="font-weight-bold">Extra Info</Form.Label>
+              <Form.Control
+                value={AboutForm.image}
+                onChange={(e) =>
+                  setAboutForm({ ...AboutForm, image: e.target.value })
+                }
+              />
+            </Form.Group>
+            <hr />
+            <Button
+              disabled={Loading}
+              type="submit"
+              variant="success"
+              size="sm"
+            >
+              Submit
+            </Button>
+          </>
+        </Form>
       )}
-    </Form>
+    </section>
   );
 }
 

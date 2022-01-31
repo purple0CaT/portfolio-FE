@@ -13,6 +13,7 @@ import { db } from "./firebase-config";
 const aboutCollection = collection(db, "about");
 const portfolioCollection = collection(db, "portfolio");
 const activityCollection = collection(db, "activities");
+
 //  About Datas
 export const getAbout = async () => {
   const data = await getDocs(aboutCollection);
@@ -35,6 +36,20 @@ export const getPortfolio = async () => {
     id: doc.id,
   }));
   return portData;
+};
+export const deletePortfolioItem = async (id: string) => {
+  const userDoc = doc(db, "portfolio", id);
+  await deleteDoc(userDoc);
+  return true;
+};
+export const addNewPortfolioItem = async (data: any) => {
+  await addDoc(portfolioCollection, data);
+  return true;
+};
+export const updatePortfolioItem = async (data: any, id: string) => {
+  const userDoc = doc(db, "portfolio", id);
+  await updateDoc(userDoc, data);
+  return true;
 };
 // Activity
 export const getActivity = async () => {

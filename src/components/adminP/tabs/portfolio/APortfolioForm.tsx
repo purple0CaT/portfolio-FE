@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { Button, Form } from "react-bootstrap";
+import { addNewPortfolioItem } from "../../../../firebase/FbHooks";
 
 //
-function APortfolioForm() {
+function APortfolioForm({ reFetch }: any) {
   const [ItemForm, setItemForm] = useState({
     title: "",
     image: "",
@@ -12,10 +13,13 @@ function APortfolioForm() {
   //
   const addNewItem = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    alert("+");
+    const match = await addNewPortfolioItem(ItemForm);
+    if (match) {
+      reFetch();
+    }
   };
   return (
-    <Form className="text-center py-3 px-1" onSubmit={addNewItem}>
+    <form className="portfolioForm" onSubmit={addNewItem}>
       <Form.Group id="itemTitle" className="mb-2">
         <Form.Label>
           <h5 className="m-0">Title</h5>
@@ -38,10 +42,12 @@ function APortfolioForm() {
       </Form.Group>
       <Form.Group id="itemDescription" className="mb-2">
         <Form.Label>
-          <h5 className="m-0">Image</h5>
+          <h5 className="m-0">Description</h5>
         </Form.Label>
         <Form.Control
           required
+          as="textarea"
+          rows={3}
           value={ItemForm.description}
           onChange={(e) =>
             setItemForm({ ...ItemForm, description: e.target.value })
@@ -62,7 +68,7 @@ function APortfolioForm() {
       <Button type="submit" variant="info" size="sm">
         Add
       </Button>
-    </Form>
+    </form>
   );
 }
 
