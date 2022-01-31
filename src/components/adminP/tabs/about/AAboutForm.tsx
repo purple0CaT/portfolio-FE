@@ -17,6 +17,7 @@ function AAboutForm({ AboutData, reFetch }: AboutType) {
   const [AboutForm, setAboutForm] = useState({
     description: "",
     extraDes: "",
+    image: "",
   });
   //
   const submitUpdates = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -34,7 +35,7 @@ function AAboutForm({ AboutData, reFetch }: AboutType) {
     <Form onSubmit={submitUpdates} style={{ width: "90%" }}>
       {AboutForm && (
         <>
-          <Form.Group id="aboutUpdateDesc">
+          <Form.Group id="aboutUpdateDesc" className="mb-2">
             <Form.Label className="font-weight-bold">Description</Form.Label>
             <Form.Control
               type="text"
@@ -46,7 +47,7 @@ function AAboutForm({ AboutData, reFetch }: AboutType) {
               }
             />
           </Form.Group>
-          <Form.Group id="aboutUpdateExtraDes">
+          <Form.Group id="aboutUpdateExtraDes" className="mb-2">
             <Form.Label className="font-weight-bold">Extra Info</Form.Label>
             <Form.Control
               as="textarea"
@@ -54,6 +55,15 @@ function AAboutForm({ AboutData, reFetch }: AboutType) {
               value={AboutForm.extraDes}
               onChange={(e) =>
                 setAboutForm({ ...AboutForm, extraDes: e.target.value })
+              }
+            />
+          </Form.Group>
+          <Form.Group id="aboutUpdateExtraDes" className="mb-2">
+            <Form.Label className="font-weight-bold">Extra Info</Form.Label>
+            <Form.Control
+              value={AboutForm.image}
+              onChange={(e) =>
+                setAboutForm({ ...AboutForm, image: e.target.value })
               }
             />
           </Form.Group>

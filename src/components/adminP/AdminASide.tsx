@@ -1,8 +1,8 @@
+import ConnectWithoutContactIcon from "@mui/icons-material/ConnectWithoutContact";
 import LineWeightIcon from "@mui/icons-material/LineWeight";
-import WorkIcon from "@mui/icons-material/Work";
 import PersonOutlineIcon from "@mui/icons-material/PersonOutline";
+import WorkIcon from "@mui/icons-material/Work";
 import { NavLink } from "react-router-dom";
-import AdminNavBar from "./AdminNavBar";
 //
 interface ASideImport {
   closeDrawer?: () => void;
@@ -44,6 +44,17 @@ function AdminASide({ closeDrawer }: ASideImport) {
       >
         <WorkIcon />
         <span className="font-weight-bold">Portfolio</span>
+      </NavLink>
+      <NavLink
+        to="/admins/contact"
+        className={({ isActive }) => {
+          return `${isActive && "activeASideButton"} ASideButton`;
+        }}
+        end
+        onClick={closeDrawer}
+      >
+        <ConnectWithoutContactIcon />
+        <span className="font-weight-bold">Contact</span>
       </NavLink>
     </section>
   );

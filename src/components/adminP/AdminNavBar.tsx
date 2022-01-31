@@ -1,8 +1,7 @@
+import BungalowIcon from "@mui/icons-material/Bungalow";
 import { Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { useAuth } from "../../firebase/AuthProvider";
-import ArrowBackIcon from "@mui/icons-material/ArrowBack";
-import { IconButton } from "@mui/material";
 //
 function AdminNavBar() {
   const { currentUser, logOut }: any = useAuth();
@@ -10,9 +9,9 @@ function AdminNavBar() {
     <div className="adminNavBar">
       <div>
         <Link to="/">
-          <IconButton>
-            <ArrowBackIcon />
-          </IconButton>{" "}
+          {/* <IconButton> */}
+          <BungalowIcon fontSize="large" style={{ color: "white" }} />
+          {/* </IconButton> */}
         </Link>
       </div>
       <div>

@@ -147,3 +147,30 @@ $AdminASideBG: rgb(134, 134, 134);
     box-shadow: 0 0 5px grey;
   }
 }
+
+// === Activity
+.adminActivityList {
+  position: relative;
+  display: flex;
+  border-radius: 20px;
+  padding: 1rem;
+  gap: 1rem;
+  margin: 0;
+  overflow-x: scroll;
+  background-color: white;
+  //
+  & .adminActivityItem {
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 0 5px grey;
+    min-width: 20rem !important;
+    padding: 0.5rem;
+  }
+}
+
+.activityForm {
+  text-align: center;
+  padding: 0.5rem;
+  border-radius: 20px;
+  background-color: rgb(233, 233, 233);
+}

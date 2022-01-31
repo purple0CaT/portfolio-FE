@@ -1,5 +1,7 @@
 import {
+  addDoc,
   collection,
+  deleteDoc,
   doc,
   getDocs,
   orderBy,
@@ -43,4 +45,18 @@ export const getActivity = async () => {
     id: doc.id,
   }));
   return activData;
+};
+export const addNewActivity = async (data: any) => {
+  await addDoc(activityCollection, data);
+  return true;
+};
+export const updateActivityItem = async (data: any, id: string) => {
+  const userDoc = doc(db, "activities", id);
+  await updateDoc(userDoc, data);
+  return true;
+};
+export const deleteActivityItem = async (id: string) => {
+  const userDoc = doc(db, "activities", id);
+  await deleteDoc(userDoc);
+  return true;
 };

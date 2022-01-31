@@ -23,12 +23,21 @@ function CInfo() {
   //
   return (
     <main className="h-100 py-4 d-flex flex-column justify-content-around align-items-center">
-      <section style={{ width: "90%" }}>
+      <section
+        style={{
+          width: "80%",
+          borderRadius: "20px",
+          overflow: "hidden",
+        }}
+      >
         <MapContainer
           center={[lat, lon]}
           zoom={8}
           scrollWheelZoom={false}
-          style={{ minWidth: "20vh", minHeight: "30vh", borderRadius: "20px" }}
+          style={{
+            minWidth: "20vh",
+            minHeight: "30vh",
+          }}
         >
           <TileLayer
             attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -38,7 +47,7 @@ function CInfo() {
           {/* {profile && <Circle center={[lat, lon]} radius={2000} />} */}
         </MapContainer>
       </section>
-      <section className="d-flex flex-column" style={{ width: "90%" }}>
+      <section className="d-flex flex-column" style={{ width: "80%" }}>
         <div className="d-flex align-items-center">
           <h4 className="font-weight-bold m-0">Socials: </h4>
           <div className="d-flex align-items-center">
