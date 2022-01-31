@@ -1,19 +1,34 @@
 import emailjs from "@emailjs/browser";
-import { Alert, Button, CircularProgress, TextField } from "@mui/material";
+import {
+  Alert,
+  Button,
+  Checkbox,
+  CircularProgress,
+  TextField,
+} from "@mui/material";
 import React, { useState } from "react";
 
 //
 function CForm() {
+  const [ButtonLoader, setButtonLoader] = useState(false);
+  const [CheckBoxes, setCheckBoxes] = useState({ first: false, second: false });
   const [formInput, setformInput] = useState({
     email: "",
     name: "",
     message: "",
   });
-  const [ButtonLoader, setButtonLoader] = useState(false);
   const [AlertVisible, setAlertVisible] = useState({
     type: "success",
     visible: false,
   });
+  // CHeckBox
+  const handleCheckBox = (type: string) => {
+    if (type === "first") {
+      setCheckBoxes({ ...CheckBoxes, first: !CheckBoxes.first });
+    } else {
+      setCheckBoxes({ ...CheckBoxes, second: !CheckBoxes.second });
+    }
+  };
   // Email Handler
   const sendEmail = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -88,6 +103,26 @@ function CForm() {
             setformInput({ ...formInput, message: e.target.value })
           }
         />
+        <section className="mb-2 d-flex justify-content-around w-100">
+          <div className="d-flex align-items-center">
+            <Checkbox
+              color="default"
+              checked={CheckBoxes.first}
+              onChange={() => handleCheckBox("first")}
+            />
+            <p className="m-0">Not a robot?</p>
+          </div>
+          {CheckBoxes.first && (
+            <div className="d-flex align-items-center">
+              <Checkbox
+                color="default"
+                checked={CheckBoxes.second}
+                onChange={() => handleCheckBox("second")}
+              />
+              <p className="m-0">Are you sure?</p>
+            </div>
+          )}
+        </section>
         {ButtonLoader ? (
           <CircularProgress />
         ) : (
@@ -100,6 +135,7 @@ function CForm() {
               </Alert>
             ) : (
               <Button
+                disabled={CheckBoxes.first && CheckBoxes.second ? false : true}
                 type="submit"
                 variant="outlined"
                 sx={{ color: "white", borderColor: "white" }}
