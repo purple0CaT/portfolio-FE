@@ -24,7 +24,7 @@ function CForm() {
   // CHeckBox
   const handleCheckBox = (type: string) => {
     if (type === "first") {
-      setCheckBoxes({ ...CheckBoxes, first: !CheckBoxes.first });
+      setCheckBoxes({ second: false, first: !CheckBoxes.first });
     } else {
       setCheckBoxes({ ...CheckBoxes, second: !CheckBoxes.second });
     }
@@ -47,6 +47,7 @@ function CForm() {
             name: "",
             message: "",
           });
+          setCheckBoxes({ first: false, second: false });
           setButtonLoader(false);
           setAlertVisible({ type: "success", visible: true });
           setTimeout(() => {
@@ -54,6 +55,7 @@ function CForm() {
           }, 2000);
         },
         (err) => {
+          setCheckBoxes({ first: false, second: false });
           setAlertVisible({ type: "error", visible: true });
           setTimeout(() => {
             setAlertVisible({ type: "", visible: false });

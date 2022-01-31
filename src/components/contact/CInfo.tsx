@@ -22,8 +22,8 @@ function CInfo() {
   const lon = -2.9916;
   //
   return (
-    <main className="h-100 px-5 py-4 d-flex flex-column justify-content-around">
-      <section>
+    <main className="h-100 py-4 d-flex flex-column justify-content-around align-items-center">
+      <section style={{ width: "90%" }}>
         <MapContainer
           center={[lat, lon]}
           zoom={8}
@@ -38,7 +38,7 @@ function CInfo() {
           {/* {profile && <Circle center={[lat, lon]} radius={2000} />} */}
         </MapContainer>
       </section>
-      <section className="d-flex flex-column w-100">
+      <section className="d-flex flex-column" style={{ width: "90%" }}>
         <div className="d-flex align-items-center">
           <h4 className="font-weight-bold m-0">Socials: </h4>
           <div className="d-flex align-items-center">

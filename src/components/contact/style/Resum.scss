@@ -1,3 +1,4 @@
+//
 .resumWrapper {
   background-color: rgb(45, 45, 48);
   color: white;
@@ -11,6 +12,7 @@
   align-items: center;
   flex-direction: column;
   border-radius: 20px;
+  animation: 4s linear boxShadowColor infinite;
   //
   & .formInputComp {
     margin-bottom: 2rem;
@@ -31,5 +33,26 @@
         border-color: white !important;
       }
     }
+  }
+}
+
+@keyframes boxShadowColor {
+  0% {
+    box-shadow: 0 0 15px white;
+  }
+  20% {
+    box-shadow: 0 0 15px red;
+  }
+  40% {
+    box-shadow: 0 0 15px rgb(72, 255, 0);
+  }
+  60% {
+    box-shadow: 0 0 15px rgb(0, 153, 255);
+  }
+  80% {
+    box-shadow: 0 0 15px rgb(204, 0, 255);
+  }
+  100% {
+    box-shadow: 0 0 15px white;
   }
 }
