@@ -1,10 +1,11 @@
 import ArrowCircleUpIcon from "@mui/icons-material/ArrowCircleUp";
+import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import { Grid, IconButton, useMediaQuery } from "@mui/material";
 import { useEffect, useRef, useState } from "react";
 import { Link } from "react-scroll";
+import scrollIntoView from "scroll-into-view";
 import { getActivity } from "../../firebase/FbHooks";
 import ActivityItem from "./ActivityItem";
-import scrollIntoView from "scroll-into-view";
 //
 function HChildren() {
   const [ActivityData, setActivityData] = useState<any | null>(null);
@@ -59,7 +60,12 @@ function HChildren() {
             offset={-48}
             duration={400}
           >
-            <h5 className="m-0">About Me</h5>
+            <h5 className="m-0 font-weight-bold">
+              About Me{" "}
+              <IconButton size="small">
+                <ArrowForwardIcon />
+              </IconButton>
+            </h5>
           </Link>
         </div>
       </Grid>

@@ -37,11 +37,15 @@ function Portfolio() {
   }, []);
   //
   return (
-    <main className="portWrapper sectionWrapper">
-      <section
-        className="w-100 d-flex flex-column align-items-center justify-content-center"
-        style={{ height: "20vh" }}
-      >
+    <main
+      className="portWrapper sectionWrapper"
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "space-around",
+      }}
+    >
+      <section className="w-100 d-flex flex-column align-items-center justify-content-center">
         <h1
           style={{ cursor: "pointer", position: "relative" }}
           onClick={() => setVisibleTicker(!visibleTicker)}

@@ -29,15 +29,16 @@ function About() {
 
   return (
     <main className="aboutWrapper sectionWrapper">
-      <h1 className="m-0 mx-auto position-relative">
+      <h1 className="my-2 mx-auto position-relative">
         About
-        <div className="nextSectionTab">
+        <div className="nextSectionTab d-flex align-items-center">
           <Link
             to="Portfolio"
             spy={true}
             smooth={true}
             offset={-48}
             duration={400}
+            className="d-flex align-items-center"
           >
             <IconButton size="small">
               <ArrowForwardIcon />

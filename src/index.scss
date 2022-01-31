@@ -23,11 +23,11 @@ code {
   height: calc(100vh - 3em);
   display: flex;
   flex-direction: column;
-  /* padding-top: 4.5em; */
 }
 .nextSectionTab {
   position: absolute;
   top: 0;
+  bottom: 0;
   right: -3rem;
   //
   & button {

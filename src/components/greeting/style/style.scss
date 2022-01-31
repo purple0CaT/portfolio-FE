@@ -10,23 +10,24 @@
   align-items: center;
   z-index: 999;
   animation-name: greeting;
-  animation-duration: 2.1s;
+  animation-duration: 2s;
 }
 
 @keyframes greeting {
   0% {
-    background-color: chocolate;
-  }
-  25% {
-    background-color: yellow;
-  }
-  50% {
-    background-color: blue;
+    background-color: white;
   }
   80% {
+    background-color: black;
+    color: white;
     opacity: 1;
   }
+  81% {
+    color: white;
+    background-color: rgb(173, 0, 0);
+  }
   100% {
-    opacity: 0;
+    color: white;
+    background-color: red;
   }
 }
