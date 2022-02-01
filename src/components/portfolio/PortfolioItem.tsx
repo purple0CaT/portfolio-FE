@@ -1,4 +1,3 @@
-
 interface ItemImprt {
   item: {
     image: string;
@@ -18,8 +17,13 @@ function PortfolioItem({ item, index }: ItemImprt) {
         alt={item.title}
         style={{ height: "50%", width: "100%", objectFit: "cover" }}
       />
-      <p>{item.description}</p>
-      <a target="_blank" href={item.url} className="mt-auto">
+      <p className="px-1">{item.description}</p>
+      <a
+        target="_blank"
+        href={item.url}
+        className="mt-auto"
+        style={{ color: "white" }}
+      >
         <h4>Check out</h4>
       </a>
     </li>
