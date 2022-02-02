@@ -11,7 +11,7 @@ interface ItemImprt {
 function PortfolioItem({ item, index }: ItemImprt) {
   return (
     <li className={`singlePortfolioItem`}>
-      <h5>{item.title}</h5>
+      <h5 className="font-weight-bold">{item.title}</h5>
       <img
         src={item.image}
         alt={item.title}

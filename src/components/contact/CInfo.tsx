@@ -17,9 +17,7 @@ function getIcon(iconSize: any) {
 }
 
 //
-function CInfo() {
-  const lat = 53.4084;
-  const lon = -2.9916;
+function CInfo({ data }: any) {
   //
   return (
     <main className="h-100 py-4 d-flex flex-column justify-content-around align-items-center">
@@ -31,7 +29,7 @@ function CInfo() {
         }}
       >
         <MapContainer
-          center={[lat, lon]}
+          center={[data.coord._lat, data.coord._long]}
           zoom={8}
           scrollWheelZoom={false}
           style={{
@@ -43,39 +41,33 @@ function CInfo() {
             attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
             url="https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png"
           />
-          <Marker position={[lat, lon]} icon={getIcon(30)} />
-          {/* {profile && <Circle center={[lat, lon]} radius={2000} />} */}
+          <Marker
+            position={[data.coord._lat, data.coord._long]}
+            icon={getIcon(30)}
+          />
         </MapContainer>
       </section>
-      <section className="d-flex flex-column" style={{ width: "80%" }}>
-        <div className="d-flex align-items-center">
-          <h4 className="font-weight-bold m-0">Socials: </h4>
-          <div className="d-flex align-items-center">
-            <a href="https://github.com/purple0CaT" target="_blank">
-              <IconButton style={{ color: "white" }} size="large" color="info">
-                <GitHubIcon fontSize="large" />
-              </IconButton>
-            </a>
-            <a href="https://www.linkedin.com/in/purplekot/" target="_blank">
-              <IconButton style={{ color: "white" }} size="large" color="info">
-                <LinkedInIcon fontSize="large" />
-              </IconButton>
-            </a>
-            <a href="https://www.instagram.com/_sandoraw_/" target="_blank">
-              <IconButton style={{ color: "white" }} size="large" color="info">
-                <InstagramIcon fontSize="large" />
-              </IconButton>
-            </a>
-            <a
-              href="https://www.youtube.com/channel/UCgSrqsVm25E7ivuRJobzm4g"
-              target="_blank"
-            >
-              <IconButton style={{ color: "white" }} size="large" color="info">
-                <YouTubeIcon fontSize="large" />
-              </IconButton>
-            </a>
-          </div>
-        </div>
+      <section className="d-flex align-items-center py-2 justify-content-around">
+        <a href={data.github} target="_blank">
+          <IconButton style={{ color: "white" }} size="large" color="info">
+            <GitHubIcon fontSize="large" />
+          </IconButton>
+        </a>
+        <a href={data.linkedin} target="_blank">
+          <IconButton style={{ color: "white" }} size="large" color="info">
+            <LinkedInIcon fontSize="large" />
+          </IconButton>
+        </a>
+        <a href={data.instagram} target="_blank">
+          <IconButton style={{ color: "white" }} size="large" color="info">
+            <InstagramIcon fontSize="large" />
+          </IconButton>
+        </a>
+        <a href={data.youtube} target="_blank">
+          <IconButton style={{ color: "white" }} size="large" color="info">
+            <YouTubeIcon fontSize="large" />
+          </IconButton>
+        </a>
       </section>
     </main>
   );

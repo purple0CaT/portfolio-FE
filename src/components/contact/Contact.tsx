@@ -1,12 +1,23 @@
 import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
 import { Grid, IconButton } from "@mui/material";
 import { height } from "@mui/system";
+import { useEffect, useState } from "react";
 import { Link } from "react-scroll";
+import { getContact } from "../../firebase/FbHooks";
 import CForm from "./CForm";
 import CInfo from "./CInfo";
 import "./style/Resum.scss";
 
 function Contact() {
+  const [ContactData, setContactData]: null | any = useState(null);
+  //
+  const fetchContactData = async () => {
+    const contData = await getContact();
+    setContactData(contData[0]);
+  };
+  useEffect(() => {
+    fetchContactData();
+  }, []);
   return (
     <main
       className="resumWrapper sectionWrapper"
@@ -36,7 +47,7 @@ function Contact() {
             <CForm />
           </Grid>
           <Grid item xs={12} md={5}>
-            <CInfo />
+            {ContactData && <CInfo data={ContactData} />}
           </Grid>
         </Grid>
       </section>

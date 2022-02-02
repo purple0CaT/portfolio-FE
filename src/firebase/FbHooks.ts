@@ -13,6 +13,7 @@ import { db } from "./firebase-config";
 const aboutCollection = collection(db, "about");
 const portfolioCollection = collection(db, "portfolio");
 const activityCollection = collection(db, "activities");
+const contactCollection = collection(db, "contact");
 
 //  About Datas
 export const getAbout = async () => {
@@ -74,4 +75,13 @@ export const deleteActivityItem = async (id: string) => {
   const userDoc = doc(db, "activities", id);
   await deleteDoc(userDoc);
   return true;
+};
+// Contact
+export const getContact = async () => {
+  const data = await getDocs(contactCollection);
+  const portData = data.docs.map((doc: any) => ({
+    ...doc.data(),
+    id: doc.id,
+  }));
+  return portData;
 };
