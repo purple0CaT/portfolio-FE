@@ -17,7 +17,7 @@ function AdmPortfolio() {
     loadAboutData();
   }, []);
   return (
-    <Grid container className="h-100">
+    <Grid container className="pt-5">
       <Grid item xs={12} md={8}>
         <section className="d-flex align-items-center h-100 p-2">
           <ul className="adminPortfolio">

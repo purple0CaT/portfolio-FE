@@ -2,6 +2,7 @@ import { CircularProgress, Grid } from "@mui/material";
 import { useEffect, useState } from "react";
 import { getContact } from "../../../../firebase/FbHooks";
 import ALeftCont from "./ALeftCont";
+import ARightCont from "./ARightCont";
 //
 function AdmContact() {
   const [ContactData, setContactData]: null | any = useState(null);
@@ -25,7 +26,13 @@ function AdmContact() {
             <CircularProgress />
           )}
         </Grid>
-        <Grid item xs={12} md={5}></Grid>
+        <Grid item xs={12} md={5}>
+          {ContactData ? (
+            <ARightCont data={ContactData} reFetch={fetchContactData} />
+          ) : (
+            <CircularProgress />
+          )}
+        </Grid>
       </Grid>
     </div>
   );

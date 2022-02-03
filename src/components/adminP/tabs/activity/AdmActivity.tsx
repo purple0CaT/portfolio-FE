@@ -16,10 +16,10 @@ function AdmActivity() {
     loadActivityData();
   }, []);
   return (
-    <main className="h-100 w-100 p-3">
+    <main className="h-100 w-100 pt-5">
       <Grid container className="h-100">
         <Grid item xs={12} md={8}>
-          <section className="w-100 h-100 d-flex align-items-center">
+          <section className="w-100 h-100">
             <ul className="adminActivityList">
               {ActivityData &&
                 ActivityData.map((item: any) => (

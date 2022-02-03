@@ -27,7 +27,7 @@ function AFormActivity({ reFetch }: any) {
   };
   //
   return (
-    <section className="w-100 h-100 d-flex align-items-center justify-content-center p-3">
+    <section className="w-100 h-100 px-3">
       <form className="activityForm" onSubmit={handleNewItem}>
         <Form.Group id="aboutUpdateDesc" className="mb-2">
           <Form.Label className="font-weight-bold">Text Activity</Form.Label>

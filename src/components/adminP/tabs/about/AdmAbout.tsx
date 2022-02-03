@@ -24,7 +24,7 @@ function AdmAbout() {
     loadAboutData();
   }, []);
   return AboutData ? (
-    <Grid container className="h-100 px-2">
+    <Grid container className="pt-5">
       <Grid
         item
         xs={12}

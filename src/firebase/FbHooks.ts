@@ -85,3 +85,8 @@ export const getContact = async () => {
   }));
   return portData;
 };
+export const updateContact = async (data: any, id: string) => {
+  const userDoc = doc(db, "contact", id);
+  await updateDoc(userDoc, data);
+  return true;
+};
