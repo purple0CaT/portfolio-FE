@@ -15,18 +15,18 @@ function AdmContact() {
     fetchContactData();
   }, []);
   return (
-    <div className="h-100 w-100 pt-5 px-2 text-center">
+    <div className="h-100 w-100 pt-3 px-2 text-center">
       <Grid container className="h-100">
-        <Grid item xs={12} md={7}>
+        <Grid item xs={12} md={7} className="px-3">
           {ContactData ? (
-            <div className="d-flex flex-column align-items-center">
+            <div className="adminRegCard">
               <ALeftCont data={ContactData} />
             </div>
           ) : (
             <CircularProgress />
           )}
         </Grid>
-        <Grid item xs={12} md={5}>
+        <Grid item xs={12} md={5} className="px-3">
           {ContactData ? (
             <ARightCont data={ContactData} reFetch={fetchContactData} />
           ) : (

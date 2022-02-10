@@ -9,7 +9,7 @@ interface AboutType {
 //
 function AAboutInfo({ AboutData }: AboutType) {
   return (
-    <section className="adminAboutInfo">
+    <section className="adminRegCard">
       <img
         src={AboutData?.image}
         alt="Profile picture"

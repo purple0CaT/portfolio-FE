@@ -16,6 +16,7 @@ interface PortfolioType {
   image: string;
   title: string;
   url: string;
+  techStack: string[];
 }
 //
 function Portfolio() {
@@ -42,15 +43,15 @@ function Portfolio() {
       style={{
         display: "flex",
         flexDirection: "column",
-        justifyContent: "space-around",
+        justifyContent: "space-evenly",
       }}
     >
       <section className="w-100 d-flex flex-column align-items-center justify-content-center">
         <h1
-          style={{ cursor: "pointer", position: "relative" }}
+          style={{ cursor: "pointer", position: "relative", margin: 0 }}
           onClick={() => setVisibleTicker(!visibleTicker)}
         >
-          Portfolio
+          My projects
           <div className="nextSectionTab">
             <Link
               to="Contact"

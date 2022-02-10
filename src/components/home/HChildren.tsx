@@ -51,7 +51,7 @@ function HChildren() {
         className="d-flex align-items-center justify-content-center w-100"
         style={{ minHeight: "40%" }}
       >
-        <div className="homeLeftColumn">
+        <div className="homeLeftColumn shadowCard">
           <Link
             className="homeNavigationBtn"
             to="About"
@@ -75,9 +75,9 @@ function HChildren() {
         xs={12}
         md={6}
         className="d-flex align-items-center justify-content-center w-100 dontScroll"
-        style={{ height: match ? "unset" : "60%" }}
+        style={{ height: match ? "100%" : "60%" }}
       >
-        <ul className="homeRightColumn">
+        <ul className="homeRightColumn shadowCard">
           <div ref={ref}></div>
           <h5 className="activityHeader">Latest Activity</h5>
           {/* Children items */}

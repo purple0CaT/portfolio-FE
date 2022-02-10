@@ -33,7 +33,7 @@ function AdminPanel() {
             ></div>
           </Drawer>
           <div className="adminMenuButton" onClick={toggleDrawer}>
-            <MenuIcon />
+            <MenuIcon fontSize="large" />
           </div>
         </>
       )}

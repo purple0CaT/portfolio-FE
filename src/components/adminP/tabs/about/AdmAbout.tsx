@@ -24,7 +24,7 @@ function AdmAbout() {
     loadAboutData();
   }, []);
   return AboutData ? (
-    <Grid container className="pt-5">
+    <Grid container className="pt-3">
       <Grid
         item
         xs={12}
@@ -37,7 +37,7 @@ function AdmAbout() {
         item
         xs={12}
         md={6}
-        className="d-flex align-items-center justify-content-center"
+        className="d-flex align-items-start justify-content-center"
       >
         <AAboutForm AboutData={AboutData} reFetch={loadAboutData} />
       </Grid>

@@ -42,7 +42,7 @@ function ASingleActivity({ item, reFetch }: any) {
           />
         )}
       </div>
-      <hr className="w-100" />
+      <hr className="w-100 my-1" />
       <small className="font-weight-bold text-right">
         {dateFormat(new Date(item.createdAt.seconds * 1000), "mmm d, yyyy")}
       </small>

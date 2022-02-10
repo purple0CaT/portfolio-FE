@@ -19,7 +19,7 @@ function ARightCont({ data, reFetch }: any) {
   return (
     <section className="d-flex justify-content-center">
       {ContactForm && (
-        <form className="adminAboutForm" onSubmit={updateContactInfo}>
+        <form className="adminFormSection" onSubmit={updateContactInfo}>
           <Form.Group className="w-100">
             <Form.Label>Coordinates</Form.Label>
             <Form.Control

@@ -1,9 +1,11 @@
 $AdminNavBBG: rgb(65, 101, 131);
 $AdminASideBG: rgb(134, 134, 134);
 $AdminBgCard: rgb(233, 233, 233);
+$AdminBgLightCard: rgb(241, 241, 241);
 //
 .adminWrapper {
-  min-height: calc(100vh - 3rem);
+  // min-height: calc(100vh - 3rem);
+  min-height: 100vh;
   background-color: rgb(212, 212, 212);
   &__login {
     margin: auto;
@@ -41,7 +43,7 @@ $AdminBgCard: rgb(233, 233, 233);
   position: relative;
   align-items: center;
   inset: 0 auto auto 0;
-  min-height: calc(100vh - 3rem);
+  min-height: 100vh;
   padding: 0 0 1rem 0;
   color: white;
   min-width: 11rem;
@@ -87,19 +89,55 @@ $AdminBgCard: rgb(233, 233, 233);
       box-shadow: 0 0 5px rgb(201, 201, 201);
     }
   }
-
   // Selected Button
   & .activeASideButton {
     box-shadow: 0 0 5px rgb(201, 201, 201);
   }
 }
-
+// === Global Admin Variables
+.adminScrollList {
+  margin: 1rem 0;
+  position: relative;
+  display: flex;
+  border-radius: 10px;
+  padding: 1rem;
+  gap: 1rem;
+  overflow-x: scroll;
+  background-color: $AdminBgCard;
+  box-shadow: 0 0 5px grey;
+}
+.adminFormSection {
+  margin: 1rem 0;
+  text-align: center;
+  padding: 0.5rem;
+  border-radius: 10px;
+  width: 100%;
+  background-color: $AdminBgLightCard;
+  box-shadow: 0 0 5px grey;
+}
+.adminRegCard {
+  margin: 1rem 0;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column !important;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  background-color: $AdminBgLightCard;
+  border-radius: 10px;
+  box-shadow: 0 0 5px grey;
+}
+.adminModalForm {
+  padding: 1rem;
+  background-color: white;
+}
 // === Menu Button
 .adminMenuButton {
   position: absolute;
-  inset: 80% auto auto -5px;
+  inset: auto auto 1rem -0.4rem;
+  padding: 2rem;
   background-color: $AdminNavBBG;
-  border-radius: 20px;
+  border-radius: 30px;
   color: white;
   display: flex;
   align-items: center;
@@ -108,32 +146,8 @@ $AdminBgCard: rgb(233, 233, 233);
   cursor: pointer;
   height: 50px;
   width: 50px;
+  z-index: 999;
 }
-
-// === Admin sections
-.adminAboutInfo {
-  padding: 1rem;
-  display: flex;
-  flex-direction: column !important;
-  justify-content: center;
-  align-items: center;
-  gap: 1rem;
-  background-color: $AdminBgCard;
-  border-radius: 10px;
-}
-.adminAboutForm {
-  text-align: center;
-  width: 90%;
-  padding: 1rem;
-  display: flex;
-  flex-direction: column !important;
-  justify-content: center;
-  // align-items: center;
-  gap: 1rem;
-  background-color: $AdminBgCard;
-  border-radius: 10px;
-}
-
 // === Admin Portfolio
 .portfolioForm {
   padding: 0.5rem 1rem;
@@ -141,52 +155,24 @@ $AdminBgCard: rgb(233, 233, 233);
   background-color: $AdminBgCard;
   border-radius: 20px;
 }
-.adminPortfolio {
+.aPortfolioCard {
   display: flex;
-  width: 100%;
-  overflow-y: scroll;
-  gap: 1rem;
-  padding: 1rem;
-  background-color: $AdminBgCard;
+  flex-direction: column;
+  padding: 0 0.5rem 0.5rem 0.5rem;
+  min-width: 18rem;
+  overflow: hidden;
+  align-items: center;
+  background-color: white !important;
   border-radius: 20px;
-  //
-  & .aPortfolioCard {
-    display: flex;
-    flex-direction: column;
-    padding: 0 0.5rem 0.5rem 0.5rem;
-    width: 15rem;
-    overflow: hidden;
-    align-items: center;
-    background-color: white !important;
-    border-radius: 20px;
-    box-shadow: 0 0 5px grey;
-  }
+  box-shadow: 0 0 5px grey;
 }
-
 // === Activity
-.adminActivityList {
-  position: relative;
+.adminActivityItem {
   display: flex;
-  border-radius: 20px;
-  padding: 1rem;
-  gap: 1rem;
-  margin: 0;
-  overflow-x: scroll;
-  background-color: $AdminBgCard;
-  //
-  & .adminActivityItem {
-    display: flex;
-    flex-direction: column;
-    box-shadow: 0 0 5px grey;
-    background-color: white !important;
-    min-width: 20rem !important;
-    padding: 0.5rem;
-  }
-}
-
-.activityForm {
-  text-align: center;
+  border-radius: 10px;
+  flex-direction: column;
+  box-shadow: 0 0 5px grey;
+  background-color: white !important;
+  min-width: 20rem !important;
   padding: 0.5rem;
-  border-radius: 20px;
-  background-color: $AdminBgCard;
 }

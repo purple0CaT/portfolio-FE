@@ -17,10 +17,10 @@ function AdmPortfolio() {
     loadAboutData();
   }, []);
   return (
-    <Grid container className="pt-5">
+    <Grid container className="pt-2">
       <Grid item xs={12} md={8}>
         <section className="d-flex align-items-center h-100 p-2">
-          <ul className="adminPortfolio">
+          <ul className="adminScrollList">
             {PortfolioData &&
               PortfolioData.map((item: any) => (
                 <APortfolioCard
@@ -33,7 +33,7 @@ function AdmPortfolio() {
         </section>
       </Grid>
       <Grid item xs={12} md={4}>
-        <section className="d-flex align-items-center h-100">
+        <section className="d-flex justify-content-center p-2">
           <APortfolioForm reFetch={loadAboutData} />
         </section>
       </Grid>

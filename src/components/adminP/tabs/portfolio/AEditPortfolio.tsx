@@ -1,5 +1,4 @@
-import { Modal } from "@mui/material";
-import { title } from "process";
+import { Dialog } from "@mui/material";
 import React, { useState } from "react";
 import { Button, Form } from "react-bootstrap";
 import { updatePortfolioItem } from "../../../../firebase/FbHooks";
@@ -22,11 +21,7 @@ function AEditPortfolio({ item, reFetch, handleModal }: any) {
     }
   };
   return (
-    <Modal
-      open={true}
-      onClose={handleModal}
-      sx={{ display: "flex", alignItems: "center", justifyContent: "center" }}
-    >
+    <Dialog fullWidth={true} maxWidth={"sm"} open={true} onClose={handleModal}>
       <section
         className="p-3 d-flex align-items-center flex-column justify-content-around"
         style={{
@@ -96,7 +91,7 @@ function AEditPortfolio({ item, reFetch, handleModal }: any) {
           </div>
         </form>
       </section>
-    </Modal>
+    </Dialog>
   );
 }
 

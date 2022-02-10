@@ -4,29 +4,34 @@ interface ItemImprt {
     title: string;
     url: string;
     description: string;
+    techStack: string[];
   };
   index: number;
 }
 //
 function PortfolioItem({ item, index }: ItemImprt) {
   return (
-    <li className={`singlePortfolioItem`}>
-      <h5 className="font-weight-bold">{item.title}</h5>
+    <a href={item.url} className={`singlePortfolioItem`} target="_blank">
+      <div className="portfolioCardHeader">
+        <h4 className="font-weight-bold">{item.title}</h4>
+        {item.description && (
+          <p className="font-weight-bold">{item.description}</p>
+        )}
+      </div>
       <img
         src={item.image}
         alt={item.title}
-        style={{ height: "50%", width: "100%", objectFit: "cover" }}
+        style={{ height: "100%", width: "100%", objectFit: "cover" }}
       />
-      <p className="px-1">{item.description}</p>
-      <a
-        target="_blank"
-        href={item.url}
-        className="mt-auto"
-        style={{ color: "white" }}
-      >
-        <h4>Check out</h4>
-      </a>
-    </li>
+      <div className="portfolioCardFooter">
+        <div className="portfolioItems">
+          {item &&
+            item.techStack.map((skill, i) => (
+              <img src={skill} alt="" key={i} height={35} width={35} />
+            ))}
+        </div>
+      </div>
+    </a>
   );
 }
 

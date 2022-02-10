@@ -1,4 +1,4 @@
-import { Firestore, serverTimestamp, Timestamp } from "firebase/firestore";
+import { Timestamp } from "firebase/firestore";
 import React, { useState } from "react";
 import { Button, Form } from "react-bootstrap";
 import { addNewActivity } from "../../../../firebase/FbHooks";
@@ -28,7 +28,7 @@ function AFormActivity({ reFetch }: any) {
   //
   return (
     <section className="w-100 h-100 px-3">
-      <form className="activityForm" onSubmit={handleNewItem}>
+      <form className="adminFormSection" onSubmit={handleNewItem}>
         <Form.Group id="aboutUpdateDesc" className="mb-2">
           <Form.Label className="font-weight-bold">Text Activity</Form.Label>
           <Form.Control

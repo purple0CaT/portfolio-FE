@@ -32,9 +32,13 @@ function AAboutForm({ AboutData, reFetch }: AboutType) {
     AboutData && setAboutForm(AboutData);
   }, []);
   return (
-    <section className="adminAboutForm">
+    <>
       {AboutForm && (
-        <Form onSubmit={submitUpdates} style={{ width: "100%" }}>
+        <Form
+          className="adminFormSection"
+          onSubmit={submitUpdates}
+          style={{ width: "100%" }}
+        >
           <>
             <Form.Group id="aboutUpdateDesc" className="mb-2">
               <Form.Label className="font-weight-bold">Description</Form.Label>
@@ -80,7 +84,7 @@ function AAboutForm({ AboutData, reFetch }: AboutType) {
           </>
         </Form>
       )}
-    </section>
+    </>
   );
 }
 

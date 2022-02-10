@@ -5,6 +5,7 @@ import { Col, Row } from "react-bootstrap";
 import { Link } from "react-scroll";
 import { Parallax, ParallaxBanner } from "react-scroll-parallax";
 import { getAbout } from "../../firebase/FbHooks";
+import AboutSkill from "./AboutSkill";
 import "./style/About.scss";
 
 //
@@ -13,6 +14,7 @@ interface AboutType {
   extraDes: string;
   id: string;
   description: string;
+  techStack: string[];
 }
 //
 function About() {
@@ -67,7 +69,7 @@ function About() {
               Sandor
             </h3>
             <p>{AboutData?.description}</p>
-            <p className="mt-auto">{AboutData?.extraDes}</p>
+            <AboutSkill skills={AboutData?.techStack} />
             <div className="mx-auto">
               <a
                 className="text-decoration-none downloadCV"

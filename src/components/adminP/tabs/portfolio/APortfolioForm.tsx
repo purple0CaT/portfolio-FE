@@ -19,7 +19,7 @@ function APortfolioForm({ reFetch }: any) {
     }
   };
   return (
-    <form className="portfolioForm" onSubmit={addNewItem}>
+    <form className="adminFormSection" onSubmit={addNewItem}>
       <Form.Group id="itemTitle" className="mb-2">
         <Form.Label>
           <h5 className="m-0">Title</h5>

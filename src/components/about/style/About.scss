@@ -34,6 +34,30 @@
     }
   }
 }
+.aboutSkillSlider {
+  display: flex;
+  overflow-x: scroll;
+  width: 100%;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  padding: 1rem 0;
+  //s
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  //
+  & .skillImg {
+    position: relative;
+    filter: brightness(0) invert(1);
+    transition: 0.2s;
+    cursor: pointer;
+    //
+    &:hover {
+      transform: scale(1.4);
+      z-index: 10;
+    }
+  }
+}
 .downloadCV {
   color: rgb(121, 209, 212);
   transition: 0.2s;

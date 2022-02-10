@@ -1,4 +1,4 @@
-import { Modal } from "@mui/material";
+import { Dialog } from "@mui/material";
 import React, { useState } from "react";
 import { Button, Form } from "react-bootstrap";
 import { updateActivityItem } from "../../../../firebase/FbHooks";
@@ -20,18 +20,8 @@ function AEditActivity({ reFetch, handleModal, item }: any) {
   };
   //
   return (
-    <Modal
-      open={true}
-      onClose={handleModal}
-      sx={{ display: "flex", alignItems: "center", justifyContent: "center" }}
-    >
-      <section
-        className="p-3 d-flex align-items-center flex-column justify-content-around"
-        style={{
-          backgroundColor: "white",
-          borderRadius: "10px",
-        }}
-      >
+    <Dialog fullWidth={true} maxWidth={"sm"} open={true} onClose={handleModal}>
+      <section className="adminModalForm">
         <form className="text-center" onSubmit={handleEditActivity}>
           <Form.Group id="aboutUpdateDesc" className="mb-2">
             <Form.Label className="font-weight-bold">Text Activity</Form.Label>
@@ -39,7 +29,7 @@ function AEditActivity({ reFetch, handleModal, item }: any) {
               required
               type="text"
               as="textarea"
-              rows={5}
+              rows={6}
               value={EditActivity.text}
               onChange={(e) =>
                 setEditActivity({ ...EditActivity, text: e.target.value })
@@ -67,7 +57,7 @@ function AEditActivity({ reFetch, handleModal, item }: any) {
           </div>
         </form>
       </section>
-    </Modal>
+    </Dialog>
   );
 }
 
