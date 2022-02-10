@@ -44,32 +44,7 @@ function HChildren() {
       }}
     >
       {/* LEFT */}
-      <Grid
-        item
-        xs={12}
-        md={6}
-        className="d-flex align-items-center justify-content-center w-100"
-        style={{ minHeight: "40%" }}
-      >
-        <div className="homeLeftColumn shadowCard">
-          <Link
-            className="homeNavigationBtn"
-            to="About"
-            spy={true}
-            smooth={true}
-            offset={-48}
-            duration={400}
-          >
-            <h5 className="m-0 font-weight-bold">
-              About Me{" "}
-              <IconButton size="small">
-                <ArrowForwardIcon />
-              </IconButton>
-            </h5>
-          </Link>
-        </div>
-      </Grid>
-      {/* RIGHT */}
+
       <Grid
         item
         xs={12}
@@ -96,6 +71,32 @@ function HChildren() {
             </IconButton>
           </div>
         </ul>
+      </Grid>
+      {/* RIGHT */}
+      <Grid
+        item
+        xs={12}
+        md={6}
+        className="d-flex align-items-center justify-content-center w-100"
+        style={{ minHeight: "40%" }}
+      >
+        <div className="homeLeftColumn shadowCard">
+          <Link
+            className="homeNavigationBtn"
+            to="About"
+            spy={true}
+            smooth={true}
+            offset={-48}
+            duration={400}
+          >
+            <h5 className="m-0 font-weight-bold">
+              About Me{" "}
+              <IconButton size="small">
+                <ArrowForwardIcon />
+              </IconButton>
+            </h5>
+          </Link>
+        </div>
       </Grid>
     </Grid>
   );
