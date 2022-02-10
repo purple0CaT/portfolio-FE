@@ -65,8 +65,11 @@ function About() {
             }}
           >
             <h3>
-              <span className="greeting-span">Hello there</span>, I'm Istvan
-              Sandor
+              <span className="greeting-span">Hello there!</span> I'm Istvan
+              Sandor,{" "}
+              <small className="font-weight-bold font-italic">
+                Full Stack Developer
+              </small>
             </h3>
             <p>{AboutData?.description}</p>
             <AboutSkill skills={AboutData?.techStack} />
@@ -84,7 +87,12 @@ function About() {
           </section>
         </Col>
         {/* RIGHt COLUMN */}
-        <Col xs="12" md="4" className="d-flex align-items-center">
+        <Col
+          xs="12"
+          md="4"
+          className="d-flex align-items-center"
+          style={{ minHeight: "400px" }}
+        >
           <div style={{ height: "80%", width: "100%", position: "relative" }}>
             <Parallax className="h-100" x={[40, -40]} tagOuter="figure">
               <ParallaxBanner

@@ -20,7 +20,7 @@ code {
   font-weight: bold;
 }
 .sectionWrapper {
-  height: calc(100vh - 3em);
+  min-height: calc(100vh - 3em);
   display: flex;
   flex-direction: column;
 }

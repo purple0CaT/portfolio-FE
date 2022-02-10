@@ -61,7 +61,6 @@ function AEditPortfolio({ item, reFetch, handleModal }: any) {
             <Form.Control
               as="textarea"
               rows={3}
-              required
               value={EditForm.description}
               onChange={(e) =>
                 setEditForm({ ...EditForm, description: e.target.value })

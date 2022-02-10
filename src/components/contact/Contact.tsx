@@ -21,9 +21,13 @@ function Contact() {
   return (
     <main
       className="resumWrapper sectionWrapper"
-      style={{ minHeight: "calc(100vh - 3rem)", height: "unset" }}
+      style={{
+        minHeight: "calc(100vh - 3rem)",
+        height: "unset",
+        justifyContent: "space-evenly",
+      }}
     >
-      <section className="d-flex justify-content-center p-3">
+      <section className="d-flex justify-content-center my-2">
         <h1 className="text-center position-relative m-0">
           Contact
           <div className="nextSectionTab">
@@ -41,7 +45,7 @@ function Contact() {
           </div>
         </h1>
       </section>
-      <section className="h-100  my-auto">
+      <section className="h-100">
         <Grid container className="h-100">
           <Grid item xs={12} md={7}>
             <CForm />

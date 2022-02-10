@@ -29,7 +29,7 @@ function AdmAbout() {
         item
         xs={12}
         md={6}
-        className="d-flex align-items-center justify-content-center"
+        className="d-flex align-items-start justify-content-center px-2"
       >
         <AAboutInfo AboutData={AboutData} />
       </Grid>
@@ -37,7 +37,7 @@ function AdmAbout() {
         item
         xs={12}
         md={6}
-        className="d-flex align-items-start justify-content-center"
+        className="d-flex align-items-start justify-content-center px-2"
       >
         <AAboutForm AboutData={AboutData} reFetch={loadAboutData} />
       </Grid>

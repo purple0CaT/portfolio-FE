@@ -63,8 +63,8 @@ function AAboutForm({ AboutData, reFetch }: AboutType) {
                 }
               />
             </Form.Group>
-            <Form.Group id="aboutUpdateExtraDes" className="mb-2">
-              <Form.Label className="font-weight-bold">Extra Info</Form.Label>
+            <Form.Group id="aboutUpdateImg" className="mb-2">
+              <Form.Label className="font-weight-bold">Image</Form.Label>
               <Form.Control
                 value={AboutForm.image}
                 onChange={(e) =>
