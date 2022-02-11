@@ -43,7 +43,7 @@ function CInfo({ data }: any) {
           }}
         >
           <TileLayer
-            attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            attribution='&copy; <a  href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
             url="https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png"
           />
           <Marker
@@ -56,14 +56,13 @@ function CInfo({ data }: any) {
         className={`contactSocialLinks ${inView && "contactSocialLinksAnim"}`}
         ref={ref}
       >
-        <a
-          href={data.github}
-          target="_blank"        >
+        <a rel="noreferrer" href={data.github} target="_blank">
           <IconButton style={{ color: "white" }} size="large" color="info">
             <GitHubIcon fontSize="large" />
           </IconButton>
         </a>
         <a
+          rel="noreferrer"
           href={data.linkedin}
           target="_blank"
           style={{ animationDelay: "calc(1 * 0.5s)" }}
@@ -73,6 +72,7 @@ function CInfo({ data }: any) {
           </IconButton>
         </a>
         <a
+          rel="noreferrer"
           href={data.instagram}
           target="_blank"
           style={{ animationDelay: "calc(2 * 0.5s)" }}
@@ -82,6 +82,7 @@ function CInfo({ data }: any) {
           </IconButton>
         </a>
         <a
+          rel="noreferrer"
           href={data.youtube}
           target="_blank"
           style={{ animationDelay: "calc(3 * 0.5s)" }}

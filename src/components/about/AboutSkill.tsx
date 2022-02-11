@@ -1,7 +1,7 @@
-import React, { useEffect, useRef } from "react";
-import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
+import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import { IconButton } from "@mui/material";
+import React, { useRef } from "react";
 import { useInView } from "react-intersection-observer";
 
 function AboutSkill({ skills }: { skills: string[] | undefined }) {

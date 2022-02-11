@@ -1,9 +1,9 @@
+import GitHubIcon from "@mui/icons-material/GitHub";
+import InstagramIcon from "@mui/icons-material/Instagram";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import YouTubeIcon from "@mui/icons-material/YouTube";
 import L from "leaflet";
 import { MapContainer, Marker, TileLayer } from "react-leaflet";
-import GitHubIcon from "@mui/icons-material/GitHub";
-import LinkedInIcon from "@mui/icons-material/LinkedIn";
-import InstagramIcon from "@mui/icons-material/Instagram";
-import YouTubeIcon from "@mui/icons-material/YouTube";
 //
 function getIcon(iconSize: any) {
   return L.icon({
@@ -61,6 +61,7 @@ function ALeftCont({ data }: any) {
         <li className="d-flex align-items-center">
           <GitHubIcon style={{ color: "white" }} fontSize="large" />
           <a
+            rel="noreferrer"
             href={data.github}
             target="_blank"
             className="ml-2 text-dark"
@@ -72,6 +73,7 @@ function ALeftCont({ data }: any) {
         <li className="d-flex align-items-center">
           <LinkedInIcon style={{ color: "white" }} fontSize="large" />
           <a
+            rel="noreferrer"
             href={data.linkedin}
             target="_blank"
             className="ml-2 text-dark"
@@ -83,6 +85,7 @@ function ALeftCont({ data }: any) {
         <li className="d-flex align-items-center">
           <InstagramIcon style={{ color: "white" }} fontSize="large" />
           <a
+            rel="noreferrer"
             href={data.instagram}
             target="_blank"
             className="ml-2 text-dark"
@@ -94,6 +97,7 @@ function ALeftCont({ data }: any) {
         <li className="d-flex align-items-center">
           <YouTubeIcon style={{ color: "white" }} fontSize="large" />
           <a
+            rel="noreferrer"
             href={data.youtube}
             target="_blank"
             className="ml-2 text-dark"
