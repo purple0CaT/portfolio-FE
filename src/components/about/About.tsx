@@ -58,7 +58,7 @@ function About() {
         <Col
           xs="12"
           md="8"
-          className="position-relative d-flex align-items-center"
+          className="position-relative d-flex align-items-center py-2"
           style={{ minHeight: "50%" }}
         >
           <section
@@ -105,10 +105,10 @@ function About() {
         <Col
           xs="12"
           md="4"
-          className="d-flex align-items-center"
+          className="d-flex align-items-center py-2"
           style={{ minHeight: "400px" }}
         >
-          <div style={{ height: "80%", width: "100%", position: "relative" }}>
+          <div style={{ height: "100%", width: "100%", position: "relative" }}>
             <Parallax className="h-100" x={[40, -40]} tagOuter="figure">
               <ParallaxBanner
                 className="h-100"

@@ -6,6 +6,7 @@ import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import YouTubeIcon from "@mui/icons-material/YouTube";
+import { useInView } from "react-intersection-observer";
 //
 function getIcon(iconSize: any) {
   return L.icon({
@@ -18,9 +19,13 @@ function getIcon(iconSize: any) {
 
 //
 function CInfo({ data }: any) {
+  const { ref, inView, entry } = useInView({
+    threshold: 0.7,
+    triggerOnce: true,
+  });
   //
   return (
-    <main className="h-100 py-4 d-flex flex-column justify-content-around align-items-center">
+    <main className="contactInfoSection">
       <section
         style={{
           width: "80%",
@@ -47,23 +52,40 @@ function CInfo({ data }: any) {
           />
         </MapContainer>
       </section>
-      <section className="d-flex align-items-center py-2 justify-content-around">
-        <a href={data.github} target="_blank">
+      <section
+        className={`contactSocialLinks ${inView && "contactSocialLinksAnim"}`}
+        ref={ref}
+      >
+        <a
+          href={data.github}
+          target="_blank"        >
           <IconButton style={{ color: "white" }} size="large" color="info">
             <GitHubIcon fontSize="large" />
           </IconButton>
         </a>
-        <a href={data.linkedin} target="_blank">
+        <a
+          href={data.linkedin}
+          target="_blank"
+          style={{ animationDelay: "calc(1 * 0.5s)" }}
+        >
           <IconButton style={{ color: "white" }} size="large" color="info">
             <LinkedInIcon fontSize="large" />
           </IconButton>
         </a>
-        <a href={data.instagram} target="_blank">
+        <a
+          href={data.instagram}
+          target="_blank"
+          style={{ animationDelay: "calc(2 * 0.5s)" }}
+        >
           <IconButton style={{ color: "white" }} size="large" color="info">
             <InstagramIcon fontSize="large" />
           </IconButton>
         </a>
-        <a href={data.youtube} target="_blank">
+        <a
+          href={data.youtube}
+          target="_blank"
+          style={{ animationDelay: "calc(3 * 0.5s)" }}
+        >
           <IconButton style={{ color: "white" }} size="large" color="info">
             <YouTubeIcon fontSize="large" />
           </IconButton>

@@ -47,10 +47,10 @@ function Contact() {
       </section>
       <section className="h-100">
         <Grid container className="h-100">
-          <Grid item xs={12} md={7}>
+          <Grid item xs={12} md={7} className="p-3">
             <CForm />
           </Grid>
-          <Grid item xs={12} md={5}>
+          <Grid item xs={12} md={5} className="p-3">
             {ContactData && <CInfo data={ContactData} />}
           </Grid>
         </Grid>
