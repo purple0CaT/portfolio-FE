@@ -28,7 +28,7 @@ function CInfo({ data }: any) {
     <main className="contactInfoSection">
       <section
         style={{
-          width: "80%",
+          width: "100%",
           borderRadius: "20px",
           overflow: "hidden",
         }}

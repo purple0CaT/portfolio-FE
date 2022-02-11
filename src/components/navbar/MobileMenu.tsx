@@ -42,7 +42,7 @@ function MobileMenu() {
             to="Home"
             spy={true}
             smooth={true}
-            offset={-49}
+            offset={-47}
             duration={400}
             onClick={() => setShowBar(false)}
           >
@@ -54,7 +54,7 @@ function MobileMenu() {
             to="About"
             spy={true}
             smooth={true}
-            offset={-49}
+            offset={-47}
             duration={400}
             onClick={() => setShowBar(false)}
           >
@@ -66,7 +66,7 @@ function MobileMenu() {
             to="Portfolio"
             spy={true}
             smooth={true}
-            offset={-49}
+            offset={-47}
             duration={400}
             onClick={() => setShowBar(false)}
           >
@@ -78,7 +78,7 @@ function MobileMenu() {
             to="Contact"
             spy={true}
             smooth={true}
-            offset={-49}
+            offset={-47}
             duration={400}
             onClick={() => setShowBar(false)}
           >
