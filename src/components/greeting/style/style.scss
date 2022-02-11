@@ -9,8 +9,7 @@
   justify-content: center;
   align-items: center;
   z-index: 999;
-  animation-name: greeting;
-  animation-duration: 2s;
+  animation: 2s linear greeting forwards ;
 }
 
 @keyframes greeting {
@@ -24,7 +23,7 @@
   }
   81% {
     color: white;
-    background-color: rgb(173, 0, 0);
+    background-color: red;
   }
   100% {
     color: white;

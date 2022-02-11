@@ -16,10 +16,12 @@ function AboutSkill({ skills }: { skills: string[] | undefined }) {
         Skills
       </h3>
       <div className="w-100 d-flex align-items-center mb-2" ref={ref}>
-        <IconButton style={{ color: "white" }} color="info">
-          <ChevronLeftIcon
-            onClick={() => (skillSliderRef.current.scrollLeft -= 250)}
-          />
+        <IconButton
+          onClick={() => (skillSliderRef.current.scrollLeft -= 250)}
+          style={{ color: "white" }}
+          color="info"
+        >
+          <ChevronLeftIcon />
         </IconButton>
         <ul
           className={`aboutSkillSlider ${inView && "aboutSkillSliderAnim"}`}
@@ -39,10 +41,12 @@ function AboutSkill({ skills }: { skills: string[] | undefined }) {
               </li>
             ))}
         </ul>
-        <IconButton style={{ color: "white" }} color="info">
-          <ChevronRightIcon
-            onClick={() => (skillSliderRef.current.scrollLeft += 250)}
-          />
+        <IconButton
+          onClick={() => (skillSliderRef.current.scrollLeft += 250)}
+          style={{ color: "white" }}
+          color="info"
+        >
+          <ChevronRightIcon />
         </IconButton>
       </div>
     </section>

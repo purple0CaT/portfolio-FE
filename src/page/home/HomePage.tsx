@@ -12,21 +12,22 @@ function HomePage() {
   const { ref, inView, entry } = useInView({
     threshold: 1,
   });
-  const [Greetings, setGreetings] = useState(true);
+  const [GreetingsVisible, setGreetingsVisible] = useState(true);
   //
   useEffect(() => {
     setTimeout(() => {
-      setGreetings(false);
+      setGreetingsVisible(false);
     }, 2000);
+
   }, []);
   return (
     <>
-      {Greetings && <Greeting />}
+      {GreetingsVisible && <Greeting />}
       <div
         className="position-relative"
         style={{
-          height: Greetings ? "100vh" : "unset",
-          overflow: Greetings ? "hidden" : "unset",
+          height: GreetingsVisible ? "100vh" : "unset",
+          overflow: GreetingsVisible ? "hidden" : "unset",
         }}
       >
         <div
