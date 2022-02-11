@@ -24,13 +24,14 @@ $linearBgEnd: rgba(0, 0, 0, 0);
   display: flex;
   height: 100%;
   position: absolute;
-  left: -80%;
-  width: 100%;
+  left: -90%;
+  gap: 10rem;
   margin: 0;
+  width: 1000%;
   padding: 0.5rem 1rem;
   transition: 1s ease-in-out;
   overflow-x: scroll;
-  opacity: 0.4;
+  opacity: 0.1;
 }
 .singlePortfolioItem {
   display: flex;
@@ -97,14 +98,14 @@ $linearBgEnd: rgba(0, 0, 0, 0);
       & * {
         opacity: 1;
       }
-      background: linear-gradient(180deg, $linearBgStart 15%, $linearBgEnd);
+      background: linear-gradient(180deg, $linearBgStart 25%, $linearBgEnd);
 
-      height: 51%;
+      height: 60%;
     }
     & .portfolioCardFooter {
-      background: linear-gradient(0, $linearBgStart 15%, $linearBgEnd);
+      background: linear-gradient(0, $linearBgStart 25%, $linearBgEnd);
 
-      height: 51%;
+      height: 60%;
       & .portfolioItems {
         opacity: 1;
       }
@@ -113,7 +114,9 @@ $linearBgEnd: rgba(0, 0, 0, 0);
 }
 .portfolioAppear {
   left: 0;
+  gap: 0;
   opacity: 1;
+  width: 100%;
 }
 //
 .shadowsBox {

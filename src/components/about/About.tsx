@@ -2,6 +2,7 @@ import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import { IconButton } from "@mui/material";
 import { useEffect, useState } from "react";
 import { Col, Row } from "react-bootstrap";
+import { useInView } from "react-intersection-observer";
 import { Link } from "react-scroll";
 import { Parallax, ParallaxBanner } from "react-scroll-parallax";
 import { getAbout } from "../../firebase/FbHooks";
@@ -19,6 +20,10 @@ interface AboutType {
 //
 function About() {
   const [AboutData, setAboutData] = useState<AboutType | null>(null);
+  const { ref, inView, entry } = useInView({
+    threshold: 0.4,
+    triggerOnce: true,
+  });
   //
   async function loadAboutData() {
     const someData = await getAbout();
@@ -62,7 +67,9 @@ function About() {
               display: "flex",
               flexDirection: "column",
               width: "100%",
+              gap: "1.5rem",
             }}
+            ref={ref}
           >
             <h3>
               <span className="greeting-span">Hello there!</span> I'm Istvan
@@ -71,7 +78,16 @@ function About() {
                 Full Stack Developer
               </small>
             </h3>
-            <p>{AboutData?.description}</p>
+            <div className="position-relative overflow-hidden">
+              <p style={{ opacity: "0" }}>{AboutData?.description}</p>
+              <p
+                className={`aboutDescription ${
+                  inView && "aboutDescriptionVisible"
+                }`}
+              >
+                {AboutData?.description}
+              </p>
+            </div>
             <AboutSkill skills={AboutData?.techStack} />
             <div className="mx-auto">
               <a
@@ -81,7 +97,6 @@ function About() {
                 target={"_blank"}
               >
                 Download CV
-                {/* <h5 className="downloadCV"></h5> */}
               </a>
             </div>
           </section>

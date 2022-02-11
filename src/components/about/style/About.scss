@@ -43,6 +43,10 @@
   padding: 1rem 0;
   scroll-behavior: smooth;
   margin: 0;
+  gap: 5rem;
+  transition: 1s;
+  opacity: 0;
+
   //
   &::-webkit-scrollbar {
     display: none;
@@ -71,6 +75,22 @@
     color: rgb(72, 229, 235);
     text-shadow: 0 0 3px white;
   }
+}
+.aboutDescription {
+  position: absolute;
+  inset: 100% 0 0 0;
+  line-height: 5rem;
+  opacity: 0;
+  transition: 1s;
+}
+.aboutDescriptionVisible {
+  line-height: 1.5rem !important;
+  opacity: 1;
+  inset: 0 0 0 0;
+}
+.aboutSkillSliderAnim {
+  gap: 0;
+  opacity: 1;
 }
 // Animation
 @keyframes highlightSupport {

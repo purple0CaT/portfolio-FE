@@ -1,23 +1,32 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import { IconButton } from "@mui/material";
+import { useInView } from "react-intersection-observer";
 
-function AboutSkill({ skills }: any) {
+function AboutSkill({ skills }: { skills: string[] | undefined }) {
   const skillSliderRef: any = useRef(null);
+  const { ref, inView, entry } = useInView({
+    threshold: 1,
+    triggerOnce: true,
+  });
   return (
     <section className="d-flex w-100 mt-auto flex-column justify-content-center align-items-center">
       <h3 className="font-weight-bold" style={{ textDecoration: "underline" }}>
         Skills
       </h3>
-      <div className="w-100 d-flex align-items-center mb-2">
+      <div className="w-100 d-flex align-items-center mb-2" ref={ref}>
         <IconButton style={{ color: "white" }} color="info">
           <ChevronLeftIcon
             onClick={() => (skillSliderRef.current.scrollLeft -= 250)}
           />
         </IconButton>
-        <ul className="aboutSkillSlider" ref={skillSliderRef}>
-          {skills?.length > 0 &&
+        <ul
+          className={`aboutSkillSlider ${inView && "aboutSkillSliderAnim"}`}
+          ref={skillSliderRef}
+        >
+          {skills &&
+            skills.length > 0 &&
             skills.map((imgLink: string, i: number) => (
               <li className="d-flex mx-2" key={i + "skillsImg"}>
                 <img

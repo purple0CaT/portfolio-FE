@@ -1,7 +1,7 @@
 import React from "react";
 import { ReactDOM } from "react";
 import "./scroll/Scroll.sass";
-import memeData from "../../data/memes.json";
+import memeData from "../../../data/memes.json";
 //
 function InfiniteScrollLoop({
   surroundingBackup = 4,
