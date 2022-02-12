@@ -16,6 +16,7 @@ function Greeting() {
         <h1 className="font-weight-bold">Greeting!</h1>
       ) : (
         <h1 className="font-weight-bold">Error!</h1>
+        
       )}
     </div>
   );
