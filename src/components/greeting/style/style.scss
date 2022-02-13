@@ -9,7 +9,32 @@
   justify-content: center;
   align-items: center;
   z-index: 999;
-  animation: 2s linear greeting forwards ;
+  animation: 3s linear greeting forwards;
+}
+.greetingText {
+  font-size: 84px;
+  letter-spacing: 1rem;
+  text-align: center;
+  span {
+    display: inline-block;
+    margin: 0 -0.05em;
+    animation: greetingTextAnim 1s infinite alternate;
+    @for $i from 1 through 6 {
+      &:nth-child(#{$i + 1}) {
+        animation-delay: #{$i * 0.1}s;
+      }
+    }
+  }
+}
+@keyframes greetingTextAnim {
+  0% {
+    filter: blur(0);
+    opacity: 1;
+  }
+  100% {
+    filter: blur(5px);
+    opacity: 0.2;
+  }
 }
 
 @keyframes greeting {
@@ -22,11 +47,68 @@
     opacity: 1;
   }
   81% {
-    color: white;
-    background-color: red;
+    color: red;
+    background-color: black;
   }
   100% {
-    color: white;
-    background-color: red;
+    color: red;
+    background-color: black;
+  }
+}
+// === ERRORR
+@mixin glitchCopy {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.errorText {
+  position: relative;
+  color: tomato;
+  font-size: 4em;
+  letter-spacing: 0.5em;
+  animation: glitch-skew 1s infinite linear alternate-reverse;
+  &::before {
+    @include glitchCopy;
+    left: 2px;
+    text-shadow: -2px 0 #00b7ff;
+    clip: rect(44px, 450px, 56px, 0);
+    animation: glitch-anim 5s infinite linear alternate-reverse;
+  }
+  &::after {
+    @include glitchCopy;
+    left: -2px;
+    text-shadow: -2px 0 #00fff9, 2px 2px #00ff4c;
+    animation: glitch-anim2 1s infinite linear alternate-reverse;
+  }
+}
+@keyframes glitch-anim {
+  $steps: 20;
+  @for $i from 0 through $steps {
+    #{percentage($i*(1/$steps))} {
+      clip: rect(random(100) + px, 9999px, random(100) + px, 0);
+      transform: skew((random(100) / 100) + deg);
+    }
+  }
+}
+// Same deal, just duplicated for ultra randomness.
+@keyframes glitch-anim2 {
+  $steps: 20;
+  @for $i from 0 through $steps {
+    #{percentage($i*(1/$steps))} {
+      clip: rect(random(100) + px, 9999px, random(100) + px, 0);
+      transform: skew((random(100) / 100) + deg);
+    }
+  }
+}
+// Does the same deal as before, but now only skews. Used for main text.
+@keyframes glitch-skew {
+  $steps: 10;
+  @for $i from 0 through $steps {
+    #{percentage($i*(1/$steps))} {
+      transform: skew((random(10) - 5) + deg);
+    }
   }
 }

@@ -13,16 +13,20 @@ function HomePage() {
     threshold: 1,
   });
   const [GreetingsVisible, setGreetingsVisible] = useState(true);
+  const [ErrorVisible, setErrorVisible] = useState(false);
+
   //
   useEffect(() => {
     setTimeout(() => {
       setGreetingsVisible(false);
-    }, 2000);
-
+    }, 3000);
+    setTimeout(() => {
+      setErrorVisible(true);
+    }, 2400);
   }, []);
   return (
     <>
-      {GreetingsVisible && <Greeting />}
+      {GreetingsVisible && <Greeting ErrorVisible={ErrorVisible} />}
       <div
         className="position-relative"
         style={{
