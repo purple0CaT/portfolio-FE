@@ -23,7 +23,7 @@ function Portfolio() {
   const [visibleTicker, setVisibleTicker] = useState(false);
   const [PortfolioData, setPortfolioData] = useState<PortfolioType[] | []>([]);
   const { ref, inView, entry } = useInView({
-    threshold: 0.7,
+    threshold: 0.6,
     triggerOnce: true,
   });
   //
