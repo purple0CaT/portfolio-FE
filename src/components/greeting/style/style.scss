@@ -19,7 +19,7 @@
     display: inline-block;
     margin: 0 -0.05em;
     animation: greetingTextAnim 1s infinite alternate;
-    @for $i from 1 through 6 {
+    @for $i from 1 through 9 {
       &:nth-child(#{$i + 1}) {
         animation-delay: #{$i * 0.1}s;
       }

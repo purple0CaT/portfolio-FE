@@ -8,13 +8,16 @@ function Greeting({ ErrorVisible }: any) {
       {!ErrorVisible ? (
         <h1 className="font-weight-bold">
           <div className="greetingText">
+            <span>H</span>
+            <span>E</span>
             <span>L</span>
-            <span>O</span>
-            <span>A</span>
-            <span>D</span>
-            <span>I</span>
-            <span>N</span>
-            <span>G</span>
+            <span>L</span>
+            <span>O,</span>
+            <span>T</span>
+            <span>H</span>
+            <span>E</span>
+            <span>R</span>
+            <span>E</span>
           </div>
         </h1>
       ) : (
