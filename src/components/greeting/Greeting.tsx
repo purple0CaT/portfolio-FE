@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import "./style/style.scss";
 
 function Greeting({ ErrorVisible }: any) {
@@ -12,7 +12,7 @@ function Greeting({ ErrorVisible }: any) {
             <span>E</span>
             <span>L</span>
             <span>L</span>
-            <span>O,</span>
+            <span className="mr-3">O</span>
             <span>T</span>
             <span>H</span>
             <span>E</span>

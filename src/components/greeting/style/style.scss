@@ -9,7 +9,7 @@
   justify-content: center;
   align-items: center;
   z-index: 999;
-  animation: 3s linear greeting forwards;
+  animation: 3.5s linear greeting forwards;
 }
 .greetingText {
   font-size: 84px;
@@ -18,8 +18,8 @@
   span {
     display: inline-block;
     margin: 0 -0.05em;
-    animation: greetingTextAnim 1s infinite alternate;
-    @for $i from 1 through 9 {
+    animation: greetingTextAnim 0.4s infinite alternate;
+    @for $i from 1 through 10 {
       &:nth-child(#{$i + 1}) {
         animation-delay: #{$i * 0.1}s;
       }
@@ -41,14 +41,15 @@
   0% {
     background-color: white;
   }
-  80% {
+  50% {
     background-color: black;
+  }
+  75% {
     color: white;
     opacity: 1;
   }
-  81% {
+  76% {
     color: red;
-    background-color: black;
   }
   100% {
     color: red;
@@ -75,12 +76,12 @@
     left: 2px;
     text-shadow: -2px 0 #00b7ff;
     clip: rect(44px, 450px, 56px, 0);
-    animation: glitch-anim 5s infinite linear alternate-reverse;
+    animation: glitch-anim 3s infinite linear alternate-reverse;
   }
   &::after {
     @include glitchCopy;
     left: -2px;
-    text-shadow: -2px 0 #00fff9, 2px 2px #00ff4c;
+    text-shadow: -4px 0 #00ff2a, 4px 4px #0066ff;
     animation: glitch-anim2 1s infinite linear alternate-reverse;
   }
 }
@@ -110,5 +111,19 @@
     #{percentage($i*(1/$steps))} {
       transform: skew((random(10) - 5) + deg);
     }
+  }
+}
+
+@media only screen and (max-width: 640px) {
+  .greetingText {
+    font-size: 3rem;
+  }
+  .errorText {
+    font-size: 3rem;
+  }
+}
+@media only screen and (max-width: 435px) {
+  .greetingText {
+    font-size: 2rem;
   }
 }

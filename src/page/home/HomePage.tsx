@@ -19,10 +19,10 @@ function HomePage() {
   useEffect(() => {
     setTimeout(() => {
       setGreetingsVisible(false);
-    }, 3000);
+    }, 4000);
     setTimeout(() => {
       setErrorVisible(true);
-    }, 2400);
+    }, 2485);
   }, []);
   return (
     <>
