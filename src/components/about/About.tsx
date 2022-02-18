@@ -1,4 +1,4 @@
-import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
+import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
 import { IconButton } from "@mui/material";
 import { useEffect, useState } from "react";
 import { Col, Row } from "react-bootstrap";
@@ -48,7 +48,7 @@ function About() {
             className="d-flex align-items-center"
           >
             <IconButton size="small">
-              <ArrowForwardIcon />
+              <ArrowDownwardIcon />
             </IconButton>
           </Link>
         </div>

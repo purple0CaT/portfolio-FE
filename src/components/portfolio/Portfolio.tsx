@@ -1,4 +1,4 @@
-import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
+import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
 import { IconButton } from "@mui/material";
 import { useEffect, useState } from "react";
 import { useInView } from "react-intersection-observer";
@@ -61,7 +61,7 @@ function Portfolio() {
               duration={400}
             >
               <IconButton size="small">
-                <ArrowForwardIcon />
+                <ArrowDownwardIcon />
               </IconButton>
             </Link>
           </div>
