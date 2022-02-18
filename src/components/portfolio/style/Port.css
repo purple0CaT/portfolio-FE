@@ -6,8 +6,8 @@
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   position: relative;
   overflow: hidden;
 }
@@ -42,16 +42,15 @@
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   height: 100%;
   min-width: 300px;
   padding: 1rem 0.2rem;
   margin: 0 1rem;
-  overflow-x: scroll !important;
   border-radius: 10px;
   border: 1px solid white;
   background-color: #6b6b6b;
@@ -64,6 +63,6 @@
 
 .shadowsBox {
   -webkit-box-shadow: 0 3px 20px black;
-          box-shadow: 0 3px 20px black;
+  box-shadow: 0 3px 20px black;
 }
 /*# sourceMappingURL=Port.css.map */
