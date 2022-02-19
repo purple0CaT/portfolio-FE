@@ -1,6 +1,5 @@
 import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
 import { Grid, IconButton } from "@mui/material";
-import { height } from "@mui/system";
 import { useEffect, useState } from "react";
 import { Link } from "react-scroll";
 import { getContact } from "../../firebase/FbHooks";

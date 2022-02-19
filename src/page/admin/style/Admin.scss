@@ -62,7 +62,7 @@ $AdminBgLightCard: rgb(241, 241, 241);
   // Button
   & .ASideButton {
     display: flex;
-    justify-content: start;
+    justify-content: flex-start;
     gap: 1rem;
     align-items: center;
     color: white !important;
