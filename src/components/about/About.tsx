@@ -75,11 +75,13 @@ function About() {
               <span className="greeting-span">Hello there!</span> I'm Istvan
               Sandor,{" "}
               <small className="font-weight-bold font-italic">
-                Full Stack Developer
+                Full Stack Engineer
               </small>
             </h3>
             <div className="position-relative overflow-hidden">
-              <p style={{ opacity: "0" }}>{AboutData?.description}</p>
+              <p style={{ opacity: "0", whiteSpace: "pre-line" }}>
+                {AboutData?.description}
+              </p>
               <p
                 className={`aboutDescription ${
                   inView && "aboutDescriptionVisible"

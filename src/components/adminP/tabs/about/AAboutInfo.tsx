@@ -16,7 +16,7 @@ function AAboutInfo({ AboutData }: AboutType) {
         style={{ height: "300px", width: "auto " }}
       />
       <h5 className="font-weight-bold m-0">Description</h5>
-      <p>{AboutData?.description}</p>
+      <p style={{ whiteSpace: "pre-line" }}>{AboutData?.description}</p>
       <h5 className="font-weight-bold m-0">Extra Info</h5>
       <p>{AboutData?.extraDes}</p>
     </section>
